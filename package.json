@@ -4,10 +4,13 @@
   "description": "",
   "main": "./generate-questions/index.js",
   "scripts": {
-    "start": "node generate-questions/index.js",
-    "dev": "node -r dotenv/config generate-questions/index.js dotenv_config_path=.env.dev",
+    "start": "node --require dotenv/config generate-questions/index.js",
+    "dev": "node --require dotenv/config generate-questions/index.js dotenv_config_path=.env.dev",
+    "dev:debug": "node --require dotenv/config --inspect generate-questions/index.js dotenv_config_path=.env.dev",
     "dev:setup": "cp .env.dev.example .env.dev && echo 'Created .env.dev - please add your API keys!'",
     "setup": "cp .env.example .env && echo 'Created .env - please add your API keys!'",
+    "env:check": "node --require dotenv/config -e \"console.log('Environment loaded:', {NODE_ENV: process.env.NODE_ENV, OPENAI_KEY: process.env.OPENAI_API_KEY ? 'SET' : 'NOT_SET', STABILITY_KEY: process.env.STABILITY_API_KEY ? 'SET' : 'NOT_SET'})\"",
+    "env:check:dev": "node --require dotenv/config -e \"console.log('Dev Environment loaded:', {NODE_ENV: process.env.NODE_ENV, OPENAI_KEY: process.env.OPENAI_API_KEY ? 'SET' : 'NOT_SET', STABILITY_KEY: process.env.STABILITY_API_KEY ? 'SET' : 'NOT_SET'})\" dotenv_config_path=.env.dev",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "",

@@ -52,3 +52,6 @@ Desktop.ini
 generated-images/
 output-files/
 *.tmp
+
+execution-report-*.json
+questions-*.json
