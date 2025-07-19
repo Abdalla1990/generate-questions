@@ -1,0 +1,93 @@
+{
+  "base": {
+    "required": [
+      "id",
+      "categoryId",
+      "points",
+      "title",
+      "question-type"
+    ],
+    "optional": [
+      "image-hint",
+      "image-instructions"
+    ],
+    "validation": {
+      "points": "number, must be one of [100, 300, 500] representing easy, medium, and hard difficulty"
+    }
+  },
+  "multiple-choice": {
+    "extends": "base",
+    "required": [
+      "choices",
+      "correct-answer-index"
+    ],
+    "validation": {
+      "choices": "array of strings, minimum 2 choices",
+      "correct-answer-index": "number, must be valid index in choices array"
+    }
+  },
+  "image": {
+    "extends": "base",
+    "required": [
+      "image-hint",
+      "correct-answer"
+    ],
+    "optional": [
+      "choices",
+      "correct-answer-index"
+    ],
+    "validation": {
+      "image-hint": "string, valid URL to an image",
+      "correct-answer": "string",
+      "choices": "array of strings, minimum 2 choices (if provided)",
+      "correct-answer-index": "number, must be valid index in choices array (required if choices are provided)"
+    }
+  },
+  "voice": {
+    "extends": "base",
+    "required": [
+      "audio-url",
+      "correct-answer"
+    ],
+    "optional": [
+      "transcript"
+    ],
+    "validation": {
+      "audio-url": "string, valid URL to an audio file",
+      "correct-answer": "string, the expected answer text",
+      "transcript": "string, optional text content of the audio for accessibility"
+    }
+  },
+  "range": {
+    "extends": "base",
+    "required": [
+      "min-value",
+      "max-value",
+      "correct-answer",
+      "range"
+    ],
+    "optional": [
+      "unit"
+    ],
+    "validation": {
+      "range": "number, must be declared as the acceptable range around the correct value considering min-value and max-value",
+      "min-value": "number, the lower bound of the acceptable range",
+      "max-value": "number, must be greater than min-value",
+      "correct-answer": "number, the exact correct answer (must be between min-value and max-value)",
+      "unit": "string, optional unit for display (e.g., 'years', 'dollars', 'meters')"
+    }
+  },
+  "video": {
+    "extends": "base",
+    "required": [
+      "video-url",
+      "choices",
+      "correct-answer-index"
+    ],
+    "validation": {
+      "video-url": "string, valid URL to a video file",
+      "choices": "array of strings, minimum 2 choices",
+      "correct-answer-index": "number, must be valid index in choices array"
+    }
+  }
+}

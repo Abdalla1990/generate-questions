@@ -1,0 +1,10 @@
+[
+  { "id": "cat1", "name": "History" },
+  { "id": "cat2", "name": "Geography" },
+  { "id": "cat3", "name": "Science" },
+  { "id": "cat4", "name": "Sports" },
+  { "id": "cat5", "name": "Culture" },
+  { "id": "cat6", "name": "Language" },
+  { "id": "cat7", "name": "Religion" },
+  { "id": "cat8", "name": "General Knowledge" }
+]

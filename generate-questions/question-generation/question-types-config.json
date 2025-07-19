@@ -1,0 +1,205 @@
+{
+  "questionTypes": {
+    "multiple-choice": {
+      "enabled": true,
+      "name": "Multiple Choice",
+      "description": "Questions with multiple answer choices",
+      "mediaProcessing": false,
+      "schema": {
+        "extends": "base",
+        "required": [
+          "choices",
+          "correct-answer-index"
+        ],
+        "validation": {
+          "choices": "array of strings, minimum 2 choices",
+          "correct-answer-index": "number, must be valid index in choices array"
+        }
+      },
+      "examples": [
+        "ما هي عاصمة المملكة العربية السعودية؟",
+        "من هو مؤلف كتاب الأغاني؟",
+        "في أي سنة تم فتح مكة المكرمة؟"
+      ],
+      "promptExample": "Question: \"ما هي عاصمة المملكة العربية السعودية؟\" with choices [\"الرياض\", \"جدة\", \"مكة\", \"المدينة\"]"
+    },
+    "image": {
+      "enabled": false,
+      "name": "Image Recognition",
+      "description": "Questions that require recognizing something in an image",
+      "mediaProcessing": true,
+      "mediaType": "image",
+      "allowedContexts": [
+        "arabic-calligraphy",
+        "plant",
+        "country"
+      ],
+      "schema": {
+        "extends": "base",
+        "required": [
+          "image-hint",
+          "correct-answer",
+          "image-context"
+        ],
+        "optional": [
+          "choices",
+          "correct-answer-index"
+        ],
+        "validation": {
+          "image-hint": "string, description for image generation",
+          "correct-answer": "string",
+          "image-context": "string, must be one of: arabic-calligraphy, plant, country",
+          "choices": "array of strings, minimum 2 choices (if provided)",
+          "correct-answer-index": "number, must be valid index in choices array (required if choices are provided)"
+        }
+      },
+      "examples": [
+        "تعرف على هذا المعلم التاريخي",
+        "حدد نوع هذا النبات",
+        "تعرف على هذا الخط العربي",
+        "اكتشف هذا البلد على الخريطة"
+      ],
+      "promptExample": "Question: \"تعرف على هذا المعلم التاريخي\" with image-hint \"معلم تاريخي شهير في مصر القديمة يعكس العمارة الفرعونية\" and correct-answer \"الأهرامات\""
+    },
+    "voice": {
+      "enabled": false,
+      "name": "Audio Recognition",
+      "description": "Questions that require recognizing something in audio",
+      "mediaProcessing": true,
+      "mediaType": "audio",
+      "schema": {
+        "extends": "base",
+        "required": [
+          "audio-url",
+          "correct-answer"
+        ],
+        "optional": [
+          "transcript"
+        ],
+        "validation": {
+          "audio-url": "string, valid URL to an audio file",
+          "correct-answer": "string, the expected answer text",
+          "transcript": "string, optional text content of the audio for accessibility"
+        }
+      },
+      "examples": [
+        "تعرف على هذا المقام الموسيقي",
+        "حدد نوع هذا الطائر من صوته",
+        "من هو هذا القارئ المشهور",
+        "تعرف على هذه اللهجة العربية"
+      ],
+      "promptExample": "Question: \"استمع واكتب اسم هذا المقام الموسيقي\" with audio-url \"example.com/maqam.mp3\" and correct-answer \"مقام البيات\""
+    },
+    "range": {
+      "enabled": false,
+      "name": "Numeric Range",
+      "description": "Questions with numeric answers within a specified range",
+      "mediaProcessing": false,
+      "schema": {
+        "extends": "base",
+        "required": [
+          "min-value",
+          "max-value",
+          "correct-answer",
+          "range"
+        ],
+        "optional": [
+          "unit"
+        ],
+        "validation": {
+          "range": "number, must be declared as the acceptable range around the correct value considering min-value and max-value",
+          "min-value": "number, the lower bound of the acceptable range",
+          "max-value": "number, must be greater than min-value",
+          "correct-answer": "number, the exact correct answer (must be between min-value and max-value)",
+          "unit": "string, optional unit for display (e.g., 'years', 'dollars', 'meters')"
+        }
+      },
+      "examples": [
+        "كم يبلغ ارتفاع برج خليفة؟",
+        "في أي سنة هجرية وقعت معركة بدر؟",
+        "كم عدد آيات سورة البقرة؟"
+      ],
+      "promptExample": "Question: \"كم يبلغ ارتفاع برج خليفة؟\" with min-value: 700, max-value: 900, correct-answer: 828, range: 10, unit: \"متر\""
+    },
+    "video": {
+      "enabled": false,
+      "name": "Video Recognition",
+      "description": "Questions that require recognizing something in a video",
+      "mediaProcessing": false,
+      "mediaType": "video",
+      "schema": {
+        "extends": "base",
+        "required": [
+          "video-url",
+          "choices",
+          "correct-answer-index"
+        ],
+        "validation": {
+          "video-url": "string, valid URL to a video file",
+          "choices": "array of strings, minimum 2 choices",
+          "correct-answer-index": "number, must be valid index in choices array"
+        }
+      },
+      "examples": [
+        "حدد اسم هذه المعركة التاريخية",
+        "تعرف على هذه الرقصة التراثية",
+        "حدد نوع هذه الظاهرة الطبيعية",
+        "اكتشف هذا الفن الحركي"
+      ],
+      "promptExample": "Question: \"حدد اسم هذه المعركة التاريخية\" with video-url \"example.com/battle.mp4\""
+    }
+  },
+  "base": {
+    "required": [
+      "id",
+      "categoryId",
+      "points",
+      "title",
+      "question-type"
+    ],
+    "optional": [
+      "image-hint",
+      "image-instructions"
+    ],
+    "validation": {
+      "points": "number, must be one of [100, 300, 500] representing easy, medium, and hard difficulty"
+    }
+  },
+  "distribution": {
+    "strategy": "even",
+    "description": "How to distribute questions across enabled types",
+    "options": {
+      "even": "Distribute questions evenly across all enabled types",
+      "weighted": "Use weights specified in questionTypes",
+      "manual": "Use exact counts specified in questionTypes"
+    }
+  },
+  "mediaConfiguration": {
+    "image": {
+      "defaultService": "stability",
+      "services": {
+        "dalle": {
+          "enabled": true,
+          "costPerImage": 0.04
+        },
+        "stability": {
+          "enabled": true,
+          "costPerImage": 0.02
+        }
+      }
+    },
+    "audio": {
+      "defaultService": "openai",
+      "services": {
+        "openai": {
+          "enabled": true,
+          "costPer1kChars": 0.015
+        },
+        "elevenlabs": {
+          "enabled": false,
+          "costPer1kChars": 0.3
+        }
+      }
+    }
+  }
+}
