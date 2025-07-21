@@ -91,7 +91,7 @@
       "promptExample": "Question: \"استمع واكتب اسم هذا المقام الموسيقي\" with audio-url \"example.com/maqam.mp3\" and correct-answer \"مقام البيات\""
     },
     "range": {
-      "enabled": false,
+      "enabled": true,
       "name": "Numeric Range",
       "description": "Questions with numeric answers within a specified range",
       "mediaProcessing": false,

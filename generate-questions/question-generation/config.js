@@ -7,7 +7,7 @@ const questionTypesConfig = require('./question-types-config.json');
 const requiredFields = require('./questions-required-fields.json');
 
 // Define available categories
-const CATEGORIES = require('../categories.json');
+const CATEGORIES = require('../../categories.json');
 
 /**
  * Get enabled question types from configuration
@@ -64,10 +64,10 @@ let _generateAudio = null;
 function getImageGenerator() {
   if (!_generateImage) {
     if (useStabilityAI) {
-      const { generateImage: generateStabilityImage } = require('../imageProcessingStability');
+      const { generateImage: generateStabilityImage } = require('./imageProcessingStability');
       _generateImage = generateStabilityImage;
     } else {
-      const { generateImage: generateDallEImage } = require('../imageProcessing');
+      const { generateImage: generateDallEImage } = require('./imageProcessing');
       _generateImage = generateDallEImage;
     }
   }

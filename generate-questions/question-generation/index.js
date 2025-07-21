@@ -17,6 +17,7 @@ const { generateQuestionsWithOpenAI, parseQuestionsFromResponse } = require('./g
 const { validateQuestions } = require('./validation');
 const { analyzeQuestionTypeDistribution, analyzeCategoryDistribution } = require('./distribution');
 const { processAllQuestions, getProcessingStats, resetProcessingStats } = require('./processing');
+const { storeQuestions, generateStorageStats } = require('./storage');
 
 /**
  * Get elapsed time since start in a human-readable format
@@ -91,6 +92,28 @@ async function generateGPTQuestions(numQuestions = null) {
     analyzeQuestionTypeDistribution(questions);
     analyzeCategoryDistribution(questions);
 
+    // Store questions in DynamoDB
+    console.log(`⏱️  [${getElapsedTime(executionStart)}] Storing questions in DynamoDB...`);
+    let storageResult = null;
+    try {
+      storageResult = await storeQuestions(questions, {
+        checkDuplicates: true,
+        skipOnDuplicate: true,
+        useBatch: true
+      });
+      console.log(`✅ DynamoDB storage complete: ${storageResult.stored} stored, ${storageResult.skipped} skipped, ${storageResult.failed} failed`);
+    } catch (error) {
+      console.error(`⚠️  DynamoDB storage failed: ${error.message}`);
+      // Continue execution even if storage fails
+      storageResult = {
+        total: questions.length,
+        stored: 0,
+        skipped: 0,
+        failed: questions.length,
+        error: error.message
+      };
+    }
+
     // Save questions to file
     console.log(`⏱️  [${getElapsedTime(executionStart)}] Saving questions to file...`);
     const timestamp = new Date().toISOString().replace(/[:.]/g, '-');
@@ -119,6 +142,10 @@ async function generateGPTQuestions(numQuestions = null) {
     console.log(`Images failed: ${processingStats.images.failed}`);
     console.log(`Audio generated: ${processingStats.audio.generated}`);
     console.log(`Audio failed: ${processingStats.audio.failed}`);
+    console.log('\nStorage Statistics:');
+    console.log(`Questions stored in DynamoDB: ${storageResult ? storageResult.stored : 0}`);
+    console.log(`Questions skipped (duplicates): ${storageResult ? storageResult.skipped : 0}`);
+    console.log(`Storage failures: ${storageResult ? storageResult.failed : 0}`);
     console.log('============================\n');
 
     // Create comprehensive execution report
@@ -162,6 +189,24 @@ async function generateGPTQuestions(numQuestions = null) {
           }
         }
       },
+      storage: {
+        dynamodb: storageResult ? {
+          stored: storageResult.stored,
+          skipped: storageResult.skipped,
+          failed: storageResult.failed,
+          total: storageResult.total,
+          successRate: storageResult.total > 0 ?
+            ((storageResult.stored / storageResult.total) * 100).toFixed(1) + '%' : 'N/A',
+          error: storageResult.error || null
+        } : {
+          stored: 0,
+          skipped: 0,
+          failed: 0,
+          total: 0,
+          successRate: 'N/A',
+          error: 'Storage not attempted'
+        }
+      },
       output: {
         questionsFile: filePath,
         reportFile: null // Will be set below
@@ -183,12 +228,14 @@ async function generateGPTQuestions(numQuestions = null) {
       filePath,
       reportFilePath,
       executionReport,
+      storageResult,
       stats: {
         ...processingStats,
         openaiCost: costs.total,
         totalCost: costs.total + processingStats.totalCost,
         executionTime: totalExecutionTime,
-        executionTimeFormatted: executionTimeFormatted
+        executionTimeFormatted: executionTimeFormatted,
+        storage: storageResult
       }
     };
 

@@ -1,0 +1,2097 @@
+[
+  {
+    "id": "q1",
+    "categoryId": "cat1",
+    "points": 100,
+    "title": "متى تأسست الجمهورية العربية السورية؟",
+    "question-type": "multiple-choice",
+    "choices": [
+      "1946",
+      "1950",
+      "1960",
+      "1970"
+    ],
+    "correct-answer-index": 0
+  },
+  {
+    "id": "merged_q0001",
+    "categoryId": "cat1",
+    "points": 100,
+    "title": "متى حدثت معركة القادسية؟",
+    "question-type": "multiple-choice",
+    "choices": [
+      "632م",
+      "636م",
+      "640م",
+      "644م"
+    ],
+    "correct-answer-index": 1
+  },
+  {
+    "id": "merged_q0033",
+    "categoryId": "cat1",
+    "points": 100,
+    "title": "في أي عام وقعت معركة القادسية؟",
+    "question-type": "range",
+    "min-value": 630,
+    "max-value": 640,
+    "correct-answer": 636,
+    "range": 2
+  },
+  {
+    "id": "merged_q0110",
+    "categoryId": "cat1",
+    "points": 100,
+    "title": "متى تأسست الدولة الأموية؟",
+    "question-type": "multiple-choice",
+    "choices": [
+      "سنة 41 هجرية",
+      "سنة 61 هجرية",
+      "سنة 81 هجرية",
+      "سنة 101 هجرية"
+    ],
+    "correct-answer-index": 1
+  },
+  {
+    "id": "merged_q0119",
+    "categoryId": "cat1",
+    "points": 100,
+    "title": "'ما هو الحدث التاريخي الذي وقع في سنة 622 ميلادية؟'",
+    "question-type": "multiple-choice",
+    "choices": [
+      "الهجرة النبوية",
+      "فتح مكة",
+      "الإسراء والمعراج",
+      "ولادة النبي محمد"
+    ],
+    "correct-answer-index": 0
+  },
+  {
+    "id": "merged_q0143",
+    "categoryId": "cat1",
+    "points": 100,
+    "title": "'فتح مكة' وقع في أي سنة هجرية؟",
+    "question-type": "multiple-choice",
+    "choices": [
+      "سنة 8 هجرية",
+      "سنة 10 هجرية",
+      "سنة 12 هجرية",
+      "سنة 14 هجرية"
+    ],
+    "correct-answer-index": 0
+  },
+  {
+    "id": "merged_q0011",
+    "categoryId": "cat1",
+    "points": 300,
+    "title": "ما هو الحدث التاريخي الذي وقع في السابع من يوليو عام 1798م؟",
+    "question-type": "multiple-choice",
+    "choices": [
+      "غزو نابليون لروسيا",
+      "غزو نابليون لمصر",
+      "الثورة الفرنسية",
+      "الحرب العالمية الأولى"
+    ],
+    "correct-answer-index": 1
+  },
+  {
+    "id": "merged_q0021",
+    "categoryId": "cat1",
+    "points": 300,
+    "title": "ما هو الحدث التاريخي الذي وقع في العام 622م؟",
+    "question-type": "multiple-choice",
+    "choices": [
+      "الفتح الإسلامي للأندلس",
+      "الهجرة النبوية",
+      "معركة بدر",
+      "معركة الجمل"
+    ],
+    "correct-answer-index": 1
+  },
+  {
+    "id": "merged_q0025",
+    "categoryId": "cat1",
+    "points": 300,
+    "title": "ما هو اسم الخليفة الذي بنى القلعة الأقصر في مصر؟",
+    "question-type": "multiple-choice",
+    "choices": [
+      "المعز لدين الله",
+      "الحاكم بأمر الله",
+      "الظاهر بيبرس",
+      "الناصر صلاح الدين"
+    ],
+    "correct-answer-index": 2
+  },
+  {
+    "id": "merged_q0035",
+    "categoryId": "cat1",
+    "points": 300,
+    "title": "ما هو تاريخ معركة بدر؟",
+    "question-type": "multiple-choice",
+    "choices": [
+      "سنة 2 هجرية",
+      "سنة 12 هجرية",
+      "سنة 22 هجرية",
+      "سنة 32 هجرية"
+    ],
+    "correct-answer-index": 0
+  },
+  {
+    "id": "merged_q0039",
+    "categoryId": "cat1",
+    "points": 300,
+    "title": "تعرف على هذا المعلم التاريخي",
+    "question-type": "image",
+    "image-hint": "https://placeholder.com/image/pyramids-of-giza.jpg"
+  },
+  {
+    "id": "merged_q0055",
+    "categoryId": "cat1",
+    "points": 300,
+    "title": "متى وقعت معركة القادسية؟",
+    "question-type": "multiple-choice",
+    "choices": [
+      "سنة 15 هـ",
+      "سنة 25 هـ",
+      "سنة 35 هـ",
+      "سنة 45 هـ"
+    ],
+    "correct-answer-index": 2
+  },
+  {
+    "id": "merged_q0072",
+    "categoryId": "cat1",
+    "points": 300,
+    "title": "متى وقعت معركة القادسية؟",
+    "question-type": "multiple-choice",
+    "choices": [
+      "سنة 15 هجرية",
+      "سنة 25 هجرية",
+      "سنة 35 هجرية",
+      "سنة 45 هجرية"
+    ],
+    "correct-answer-index": 2
+  },
+  {
+    "id": "merged_q0084",
+    "categoryId": "cat1",
+    "points": 300,
+    "title": "'الجزيرة' في الدوحة هو أول قناة فضائية عربية. متى تأسست؟",
+    "question-type": "range",
+    "min-value": 1990,
+    "max-value": 2000,
+    "correct-answer": 1996,
+    "range": 2
+  },
+  {
+    "id": "merged_q0088",
+    "categoryId": "cat1",
+    "points": 300,
+    "title": "ما هو تاريخ معركة القادسية؟",
+    "question-type": "multiple-choice",
+    "choices": [
+      "سنة 15 هجرية",
+      "سنة 25 هجرية",
+      "سنة 35 هجرية",
+      "سنة 45 هجرية"
+    ],
+    "correct-answer-index": 2
+  },
+  {
+    "id": "merged_q0097",
+    "categoryId": "cat1",
+    "points": 300,
+    "title": "متى وقعت معركة القادسية؟",
+    "question-type": "multiple-choice",
+    "choices": [
+      "سنة 13 هجرية",
+      "سنة 15 هجرية",
+      "سنة 17 هجرية",
+      "سنة 19 هجرية"
+    ],
+    "correct-answer-index": 2
+  },
+  {
+    "id": "merged_q0112",
+    "categoryId": "cat1",
+    "points": 300,
+    "title": "متى وقعت معركة القادسية؟",
+    "question-type": "multiple-choice",
+    "choices": [
+      "سنة 15 هـ",
+      "سنة 25 هـ",
+      "سنة 36 هـ",
+      "سنة 45 هـ"
+    ],
+    "correct-answer-index": 2
+  },
+  {
+    "id": "q9",
+    "categoryId": "cat1",
+    "points": 500,
+    "title": "ما هو تاريخ معركة القادسية؟",
+    "question-type": "multiple-choice",
+    "choices": [
+      "636م",
+      "642م",
+      "656م",
+      "661م"
+    ],
+    "correct-answer-index": 0
+  },
+  {
+    "id": "merged_q0009",
+    "categoryId": "cat1",
+    "points": 500,
+    "title": "متى تأسست الدولة العباسية؟",
+    "question-type": "range",
+    "min-value": 750,
+    "max-value": 760,
+    "correct-answer": 750,
+    "range": 5,
+    "unit": "سنة"
+  },
+  {
+    "id": "q17",
+    "categoryId": "cat1",
+    "points": 500,
+    "title": "'الأندلس' هو اسم قديم لأي منطقة حالية؟",
+    "question-type": "multiple-choice",
+    "choices": [
+      "تركيا",
+      "إيران",
+      "إسبانيا",
+      "المغرب"
+    ],
+    "correct-answer-index": 2
+  },
+  {
+    "id": "merged_q0043",
+    "categoryId": "cat1",
+    "points": 500,
+    "title": "تعرف على هذا المقام الموسيقي",
+    "question-type": "voice",
+    "correct-answer": "مقام البياتي"
+  },
+  {
+    "id": "merged_q0047",
+    "categoryId": "cat1",
+    "points": 500,
+    "title": "في أي سنة ميلادية اكتشف كريستوفر كولومبوس أمريكا؟",
+    "question-type": "range",
+    "min-value": 1400,
+    "max-value": 1600,
+    "correct-answer": 1492,
+    "range": 10,
+    "unit": "سنة"
+  },
+  {
+    "id": "merged_q0051",
+    "categoryId": "cat1",
+    "points": 500,
+    "title": "حدد اسم هذه المعركة التاريخية",
+    "question-type": "video",
+    "choices": [
+      "معركة بدر",
+      "معركة القادسية",
+      "معركة كربلاء",
+      "معركة اليرموك"
+    ],
+    "correct-answer-index": 2
+  },
+  {
+    "id": "merged_q0070",
+    "categoryId": "cat1",
+    "points": 500,
+    "title": "متى وقعت معركة الطف؟",
+    "question-type": "range",
+    "min-value": 60,
+    "max-value": 70,
+    "correct-answer": 61,
+    "range": 1,
+    "unit": "سنة هجرية"
+  },
+  {
+    "id": "merged_q0094",
+    "categoryId": "cat1",
+    "points": 500,
+    "title": "في أي سنة ميلادية بدأت الثورة الجزائرية؟",
+    "question-type": "range",
+    "min-value": 1950,
+    "max-value": 1960,
+    "correct-answer": 1954,
+    "range": 2,
+    "unit": "سنة"
+  },
+  {
+    "id": "merged_q0103",
+    "categoryId": "cat1",
+    "points": 500,
+    "title": "اكتشف هذه المعركة التاريخية",
+    "question-type": "video",
+    "choices": [
+      "معركة بدر",
+      "معركة أحد",
+      "معركة الخندق",
+      "معركة مؤتة"
+    ],
+    "correct-answer-index": 0
+  },
+  {
+    "id": "merged_q0127",
+    "categoryId": "cat1",
+    "points": 500,
+    "title": "'في أي سنة هجرية وقعت معركة بدر؟'",
+    "question-type": "range",
+    "min-value": 1,
+    "max-value": 10,
+    "correct-answer": 2,
+    "range": 1,
+    "unit": "'سنة هجرية'"
+  },
+  {
+    "id": "merged_q0136",
+    "categoryId": "cat1",
+    "points": 500,
+    "title": "من هو مؤسس الدولة الأموية؟",
+    "question-type": "multiple-choice",
+    "choices": [
+      "معاوية بن أبي سفيان",
+      "عبد الملك بن مروان",
+      "الوليد بن عبد الملك",
+      "يزيد بن معاوية"
+    ],
+    "correct-answer-index": 0
+  },
+  {
+    "id": "q10",
+    "categoryId": "cat2",
+    "points": 100,
+    "title": "ما هي عاصمة الجزائر؟",
+    "question-type": "multiple-choice",
+    "choices": [
+      "الجزائر",
+      "وهران",
+      "قسنطينة",
+      "تلمسان"
+    ],
+    "correct-answer-index": 0
+  },
+  {
+    "id": "q18",
+    "categoryId": "cat2",
+    "points": 100,
+    "title": "'النيل' هو أطول نهر في العالم، صحيح أم خطأ؟",
+    "question-type": "multiple-choice",
+    "choices": [
+      "صحيح",
+      "خطأ"
+    ],
+    "correct-answer-index": 0
+  },
+  {
+    "id": "merged_q0036",
+    "categoryId": "cat2",
+    "points": 100,
+    "title": "ما هي عاصمة مصر؟",
+    "question-type": "multiple-choice",
+    "choices": [
+      "القاهرة",
+      "الإسكندرية",
+      "الغردقة",
+      "شرم الشيخ"
+    ],
+    "correct-answer-index": 0
+  },
+  {
+    "id": "merged_q0056",
+    "categoryId": "cat2",
+    "points": 100,
+    "title": "ما هو أطول نهر في العالم؟",
+    "question-type": "multiple-choice",
+    "choices": [
+      "النيل",
+      "الأمازون",
+      "الميسيسيبي",
+      "اليانغتسي"
+    ],
+    "correct-answer-index": 0
+  },
+  {
+    "id": "merged_q0128",
+    "categoryId": "cat2",
+    "points": 100,
+    "title": "'ما هو أطول نهر في العالم؟'",
+    "question-type": "multiple-choice",
+    "choices": [
+      "النيل",
+      "الأمازون",
+      "الميسيسيبي",
+      "اليانغتسي"
+    ],
+    "correct-answer-index": 1
+  },
+  {
+    "id": "q2",
+    "categoryId": "cat2",
+    "points": 300,
+    "title": "ما هو النهر الأطول في العالم العربي؟",
+    "question-type": "multiple-choice",
+    "choices": [
+      "النيل",
+      "الفرات",
+      "التيجرس",
+      "الأردن"
+    ],
+    "correct-answer-index": 0
+  },
+  {
+    "id": "merged_q0002",
+    "categoryId": "cat2",
+    "points": 300,
+    "title": "ما هو النهر الأطول في العالم العربي؟",
+    "question-type": "multiple-choice",
+    "choices": [
+      "النيل",
+      "الفرات",
+      "التيجر",
+      "الأردن"
+    ],
+    "correct-answer-index": 0
+  },
+  {
+    "id": "merged_q0012",
+    "categoryId": "cat2",
+    "points": 300,
+    "title": "تعرف على هذه الدولة من خلال شكلها الجغرافي",
+    "question-type": "image",
+    "image-hint": "https://placeholder.com/image/map-of-egypt.jpg"
+  },
+  {
+    "id": "merged_q0034",
+    "categoryId": "cat2",
+    "points": 300,
+    "title": "شاهد هذا الفيديو وحدد اسم هذه الظاهرة الطبيعية",
+    "question-type": "video",
+    "choices": [
+      "الزلزال",
+      "العاصفة الرملية",
+      "البركان",
+      "الأمطار الموسمية"
+    ],
+    "correct-answer-index": 1
+  },
+  {
+    "id": "merged_q0044",
+    "categoryId": "cat2",
+    "points": 300,
+    "title": "حدد نوع هذا الطائر من صوته",
+    "question-type": "voice",
+    "correct-answer": "العصفور"
+  },
+  {
+    "id": "merged_q0048",
+    "categoryId": "cat2",
+    "points": 300,
+    "title": "كم يبلغ ارتفاع جبل إيفرست؟",
+    "question-type": "range",
+    "min-value": 8000,
+    "max-value": 9000,
+    "correct-answer": 8848,
+    "range": 100,
+    "unit": "متر"
+  },
+  {
+    "id": "merged_q0052",
+    "categoryId": "cat2",
+    "points": 300,
+    "title": "تعرف على هذه الرقصة التراثية",
+    "question-type": "video",
+    "choices": [
+      "الدبكة",
+      "الخطوة",
+      "التنورة",
+      "السامري"
+    ],
+    "correct-answer-index": 0
+  },
+  {
+    "id": "merged_q0063",
+    "categoryId": "cat2",
+    "points": 300,
+    "title": "'الأردن' هو اسم نهر في فلسطين، فما معنى الأردن باللغة العربية؟",
+    "question-type": "multiple-choice",
+    "choices": [
+      "النهر العميق",
+      "النهر الطويل",
+      "النهر السريع",
+      "النهر الواسع"
+    ],
+    "correct-answer-index": 0
+  },
+  {
+    "id": "merged_q0095",
+    "categoryId": "cat2",
+    "points": 300,
+    "title": "ما هو أكبر بحيرة في العالم من حيث المساحة؟",
+    "question-type": "multiple-choice",
+    "choices": [
+      "بحيرة فيكتوريا",
+      "بحيرة سوبريور",
+      "بحيرة تانغانيقا",
+      "بحيرة بايكال"
+    ],
+    "correct-answer-index": 1
+  },
+  {
+    "id": "merged_q0104",
+    "categoryId": "cat2",
+    "points": 300,
+    "title": "تعرف على هذا المعلم الجغرافي",
+    "question-type": "image",
+    "image-hint": "https://placeholder.com/image/natural-landmark.jpg"
+  },
+  {
+    "id": "merged_q0120",
+    "categoryId": "cat2",
+    "points": 300,
+    "title": "'تعرف على هذا المعلم التاريخي'",
+    "question-type": "image",
+    "image-hint": "'https://placeholder.com/image/pyramids-of-giza.jpg'"
+  },
+  {
+    "id": "merged_q0019",
+    "categoryId": "cat2",
+    "points": 500,
+    "title": "ما هو أطول نهر في العالم؟",
+    "question-type": "multiple-choice",
+    "choices": [
+      "نهر النيل",
+      "نهر الأمازون",
+      "نهر الميسيسيبي",
+      "نهر يانغتسي"
+    ],
+    "correct-answer-index": 1
+  },
+  {
+    "id": "merged_q0022",
+    "categoryId": "cat2",
+    "points": 500,
+    "title": "أين تقع جبال الأطلس؟",
+    "question-type": "multiple-choice",
+    "choices": [
+      "الجزائر",
+      "المغرب",
+      "تونس",
+      "مصر"
+    ],
+    "correct-answer-index": 1
+  },
+  {
+    "id": "merged_q0026",
+    "categoryId": "cat2",
+    "points": 500,
+    "title": "تعرف على هذا الجبل من صورته",
+    "question-type": "image",
+    "image-hint": "https://placeholder.com/image/jabal_toubkal.jpg"
+  },
+  {
+    "id": "merged_q0040",
+    "categoryId": "cat2",
+    "points": 500,
+    "title": "حدد نوع هذا النبات",
+    "question-type": "image",
+    "image-hint": "https://placeholder.com/image/olive-tree.jpg"
+  },
+  {
+    "id": "merged_q0085",
+    "categoryId": "cat2",
+    "points": 500,
+    "title": "حدد اسم هذه الظاهرة الطبيعية",
+    "question-type": "video",
+    "choices": [
+      "الزلازل",
+      "البراكين",
+      "الأعاصير",
+      "الفيضانات"
+    ],
+    "correct-answer-index": 1
+  },
+  {
+    "id": "merged_q0089",
+    "categoryId": "cat2",
+    "points": 500,
+    "title": "حدد ارتفاع جبل كيليمنجارو بالأمتار",
+    "question-type": "range",
+    "min-value": 5000,
+    "max-value": 6000,
+    "correct-answer": 5895,
+    "range": 100,
+    "unit": "متر"
+  },
+  {
+    "id": "merged_q0098",
+    "categoryId": "cat2",
+    "points": 500,
+    "title": "حدد النطاق الصحيح لمساحة الجزائر بالكيلومتر المربع",
+    "question-type": "range",
+    "min-value": 2000000,
+    "max-value": 3000000,
+    "correct-answer": 2381741,
+    "range": 50000,
+    "unit": "كم²"
+  },
+  {
+    "id": "merged_q0111",
+    "categoryId": "cat2",
+    "points": 500,
+    "title": "حدد النطاق الصحيح لعمق البحر الأحمر",
+    "question-type": "range",
+    "min-value": 2000,
+    "max-value": 3000,
+    "correct-answer": 2211,
+    "range": 100,
+    "unit": "متر"
+  },
+  {
+    "id": "merged_q0144",
+    "categoryId": "cat2",
+    "points": 500,
+    "title": "ما هو أعلى جبل في العالم؟",
+    "question-type": "multiple-choice",
+    "choices": [
+      "جبل إيفرست",
+      "جبل كيليمنجارو",
+      "جبل كينشينجونغا",
+      "جبل لوتس"
+    ],
+    "correct-answer-index": 0
+  },
+  {
+    "id": "merged_q0023",
+    "categoryId": "cat3",
+    "points": 100,
+    "title": "ما هو عدد الكواكب في المجموعة الشمسية؟",
+    "question-type": "range",
+    "min-value": 7,
+    "max-value": 9,
+    "correct-answer": 8,
+    "range": 1,
+    "unit": ""
+  },
+  {
+    "id": "merged_q0027",
+    "categoryId": "cat3",
+    "points": 100,
+    "title": "استمع وحدد نوع هذا الطائر من صوته",
+    "question-type": "voice",
+    "correct-answer": "بلبل"
+  },
+  {
+    "id": "merged_q0041",
+    "categoryId": "cat3",
+    "points": 100,
+    "title": "تعرف على هذه الظاهرة الطبيعية",
+    "question-type": "image",
+    "image-hint": "https://placeholder.com/image/rainbow.jpg"
+  },
+  {
+    "id": "merged_q0045",
+    "categoryId": "cat3",
+    "points": 100,
+    "title": "من هو هذا القارئ المشهور؟",
+    "question-type": "voice",
+    "correct-answer": "عبد الباسط عبد الصمد"
+  },
+  {
+    "id": "merged_q0049",
+    "categoryId": "cat3",
+    "points": 100,
+    "title": "كم يبلغ عدد الكروموسومات في خلية بشرية طبيعية؟",
+    "question-type": "range",
+    "min-value": 40,
+    "max-value": 50,
+    "correct-answer": 46,
+    "range": 2
+  },
+  {
+    "id": "merged_q0053",
+    "categoryId": "cat3",
+    "points": 100,
+    "title": "حدد نوع هذه الظاهرة الطبيعية",
+    "question-type": "video",
+    "choices": [
+      "زلزال",
+      "بركان",
+      "إعصار",
+      "فيضان"
+    ],
+    "correct-answer-index": 1
+  },
+  {
+    "id": "merged_q0064",
+    "categoryId": "cat3",
+    "points": 100,
+    "title": "ما هو الكوكب الرابع في الترتيب من الشمس؟",
+    "question-type": "multiple-choice",
+    "choices": [
+      "الأرض",
+      "المريخ",
+      "زحل",
+      "الزهرة"
+    ],
+    "correct-answer-index": 1
+  },
+  {
+    "id": "merged_q0071",
+    "categoryId": "cat3",
+    "points": 100,
+    "title": "'الأكسجين' هو عنصر كيميائي أساسي للحياة، فما هو العدد الذري للأكسجين؟",
+    "question-type": "range",
+    "min-value": 5,
+    "max-value": 10,
+    "correct-answer": 8,
+    "range": 1
+  },
+  {
+    "id": "merged_q0086",
+    "categoryId": "cat3",
+    "points": 100,
+    "title": "'الأوكسجين' في الجدول الدوري هو عنصر كيميائي. ما هو رمزه؟",
+    "question-type": "multiple-choice",
+    "choices": [
+      "O",
+      "Ox",
+      "Og",
+      "On"
+    ],
+    "correct-answer-index": 0
+  },
+  {
+    "id": "merged_q0090",
+    "categoryId": "cat3",
+    "points": 100,
+    "title": "ما هو العنصر الكيميائي الأكثر وفرة في الغلاف الجوي للأرض؟",
+    "question-type": "multiple-choice",
+    "choices": [
+      "الأكسجين",
+      "الهيدروجين",
+      "الكربون",
+      "النيتروجين"
+    ],
+    "correct-answer-index": 3
+  },
+  {
+    "id": "merged_q0091",
+    "categoryId": "cat3",
+    "points": 100,
+    "title": "ما هو العنصر الكيميائي الأكثر وفرة في الكون؟",
+    "question-type": "multiple-choice",
+    "choices": [
+      "الهيدروجين",
+      "الهيليوم",
+      "الأكسجين",
+      "الكربون"
+    ],
+    "correct-answer-index": 0
+  },
+  {
+    "id": "merged_q0105",
+    "categoryId": "cat3",
+    "points": 100,
+    "title": "ما هو الكوكب الرابع في النظام الشمسي؟",
+    "question-type": "multiple-choice",
+    "choices": [
+      "المريخ",
+      "الأرض",
+      "الزهرة",
+      "المشتري"
+    ],
+    "correct-answer-index": 0
+  },
+  {
+    "id": "merged_q0113",
+    "categoryId": "cat3",
+    "points": 100,
+    "title": "ما هو العنصر الكيميائي الأكثر وفرة في الأرض؟",
+    "question-type": "multiple-choice",
+    "choices": [
+      "الأوكسجين",
+      "الهيدروجين",
+      "الكربون",
+      "الحديد"
+    ],
+    "correct-answer-index": 0
+  },
+  {
+    "id": "merged_q0137",
+    "categoryId": "cat3",
+    "points": 100,
+    "title": "ما هو الكوكب الرابع من الشمس؟",
+    "question-type": "multiple-choice",
+    "choices": [
+      "الأرض",
+      "المريخ",
+      "زحل",
+      "الزهرة"
+    ],
+    "correct-answer-index": 1
+  },
+  {
+    "id": "merged_q0010",
+    "categoryId": "cat3",
+    "points": 300,
+    "title": "ما هي درجة الغليان للماء عند مستوى سطح البحر؟",
+    "question-type": "range",
+    "min-value": 95,
+    "max-value": 105,
+    "correct-answer": 100,
+    "range": 2,
+    "unit": "درجة مئوية"
+  },
+  {
+    "id": "merged_q0020",
+    "categoryId": "cat3",
+    "points": 300,
+    "title": "تعرف على هذا الجهاز العلمي من خلال صورته",
+    "question-type": "image",
+    "image-hint": "https://placeholder.com/image/microscope.jpg"
+  },
+  {
+    "id": "q19",
+    "categoryId": "cat3",
+    "points": 300,
+    "title": "تعرف على هذا الجسم السماوي من صورته",
+    "question-type": "image",
+    "image-hint": "https://placeholder.com/image/andromeda_galaxy.jpg"
+  },
+  {
+    "id": "merged_q0078",
+    "categoryId": "cat3",
+    "points": 300,
+    "title": "ما هو العدد الذري للعنصر الكيميائي الأوكسجين؟",
+    "question-type": "range",
+    "min-value": 0,
+    "max-value": 20,
+    "correct-answer": 8,
+    "range": 1
+  },
+  {
+    "id": "merged_q0096",
+    "categoryId": "cat3",
+    "points": 300,
+    "title": "ما هو الجسم السماوي الأقرب للأرض؟",
+    "question-type": "multiple-choice",
+    "choices": [
+      "الشمس",
+      "القمر",
+      "المريخ",
+      "الزهرة"
+    ],
+    "correct-answer-index": 1
+  },
+  {
+    "id": "merged_q0129",
+    "categoryId": "cat3",
+    "points": 300,
+    "title": "'ما هو العنصر الكيميائي الذي يحتوي على رقم ذري 10؟'",
+    "question-type": "multiple-choice",
+    "choices": [
+      "الهيليوم",
+      "النيون",
+      "الأرجون",
+      "الكربون"
+    ],
+    "correct-answer-index": 1
+  },
+  {
+    "id": "merged_q0145",
+    "categoryId": "cat3",
+    "points": 300,
+    "title": "'الجاذبية' هي قوة تسحب الأجسام نحو؟",
+    "question-type": "multiple-choice",
+    "choices": [
+      "الشمس",
+      "القمر",
+      "الأرض",
+      "الكواكب"
+    ],
+    "correct-answer-index": 2
+  },
+  {
+    "id": "q3",
+    "categoryId": "cat3",
+    "points": 500,
+    "title": "ما هو العنصر الكيميائي الذي يحمل الرمز Fe؟",
+    "question-type": "multiple-choice",
+    "choices": [
+      "الذهب",
+      "الفضة",
+      "الحديد",
+      "النحاس"
+    ],
+    "correct-answer-index": 2
+  },
+  {
+    "id": "merged_q0003",
+    "categoryId": "cat3",
+    "points": 500,
+    "title": "ما هو العنصر الكيميائي الأكثر وفرة في الكون؟",
+    "question-type": "multiple-choice",
+    "choices": [
+      "الأكسجين",
+      "الهيدروجين",
+      "الكربون",
+      "الهيليوم"
+    ],
+    "correct-answer-index": 1
+  },
+  {
+    "id": "merged_q0013",
+    "categoryId": "cat3",
+    "points": 500,
+    "title": "ما هو العنصر الكيميائي الذي يحتل المركز السابع في الجدول الدوري؟",
+    "question-type": "multiple-choice",
+    "choices": [
+      "الهيليوم",
+      "الهيدروجين",
+      "النتروجين",
+      "الأكسجين"
+    ],
+    "correct-answer-index": 2
+  },
+  {
+    "id": "q11",
+    "categoryId": "cat3",
+    "points": 500,
+    "title": "'الأكسجين' و'الهيدروجين' هما عنصران رئيسيان في تكوين مادة؟",
+    "question-type": "multiple-choice",
+    "choices": [
+      "الماء",
+      "الهواء",
+      "الأرض",
+      "النار"
+    ],
+    "correct-answer-index": 0
+  },
+  {
+    "id": "merged_q0037",
+    "categoryId": "cat3",
+    "points": 500,
+    "title": "ما هو العنصر الكيميائي الأكثر وفرة في الكون؟",
+    "question-type": "multiple-choice",
+    "choices": [
+      "الأوكسجين",
+      "الهيدروجين",
+      "الكربون",
+      "النيتروجين"
+    ],
+    "correct-answer-index": 1
+  },
+  {
+    "id": "merged_q0057",
+    "categoryId": "cat3",
+    "points": 500,
+    "title": "ما هو العدد الذري للعنصر الكيميائي الهيليوم؟",
+    "question-type": "range",
+    "min-value": 1,
+    "max-value": 5,
+    "correct-answer": 2,
+    "range": 1
+  },
+  {
+    "id": "merged_q0073",
+    "categoryId": "cat3",
+    "points": 500,
+    "title": "ما هو العدد الذري للعنصر الكيميائي الهيليوم؟",
+    "question-type": "range",
+    "min-value": 0,
+    "max-value": 10,
+    "correct-answer": 2,
+    "range": 1
+  },
+  {
+    "id": "merged_q0121",
+    "categoryId": "cat3",
+    "points": 500,
+    "title": "'ما هو العنصر الكيميائي الذي يحتوي على 79 بروتونا؟'",
+    "question-type": "multiple-choice",
+    "choices": [
+      "الذهب",
+      "الفضة",
+      "النحاس",
+      "الزنك"
+    ],
+    "correct-answer-index": 0
+  },
+  {
+    "id": "merged_q0131",
+    "categoryId": "cat3",
+    "points": 500,
+    "title": "ما هو العنصر الكيميائي الذي يحتوي على رقم ذري 79؟",
+    "question-type": "multiple-choice",
+    "choices": [
+      "الزئبق",
+      "الذهب",
+      "الفضة",
+      "البلاتين"
+    ],
+    "correct-answer-index": 1
+  },
+  {
+    "id": "q4",
+    "categoryId": "cat4",
+    "points": 100,
+    "title": "من هو اللاعب الذي سجل الهدف الأول في كأس العالم 2018؟",
+    "question-type": "multiple-choice",
+    "choices": [
+      "كريستيانو رونالدو",
+      "ليونيل ميسي",
+      "نيمار",
+      "يوري غازينسكي"
+    ],
+    "correct-answer-index": 3
+  },
+  {
+    "id": "merged_q0004",
+    "categoryId": "cat4",
+    "points": 100,
+    "title": "من هو اللاعب العربي الوحيد الذي فاز بجائزة الكرة الذهبية؟",
+    "question-type": "multiple-choice",
+    "choices": [
+      "محمد صلاح",
+      "رياض محرز",
+      "سامي الجابر",
+      "جورج ويا"
+    ],
+    "correct-answer-index": 0
+  },
+  {
+    "id": "merged_q0014",
+    "categoryId": "cat4",
+    "points": 100,
+    "title": "من هو هداف كأس العالم لكرة القدم 2018؟",
+    "question-type": "multiple-choice",
+    "choices": [
+      "كيليان مبابي",
+      "لوكا مودريتش",
+      "هاري كين",
+      "كريستيانو رونالدو"
+    ],
+    "correct-answer-index": 2
+  },
+  {
+    "id": "q12",
+    "categoryId": "cat4",
+    "points": 100,
+    "title": "تعرف على هذا اللاعب من صورته",
+    "question-type": "image",
+    "image-hint": "https://placeholder.com/image/mohamed_salah.jpg"
+  },
+  {
+    "id": "merged_q0074",
+    "categoryId": "cat4",
+    "points": 100,
+    "title": "من هو اللاعب الذي سجل أكثر عدد من الأهداف في كأس العالم لكرة القدم؟",
+    "question-type": "multiple-choice",
+    "choices": [
+      "بيليه",
+      "مارادونا",
+      "ميسي",
+      "ميرتسلاف كلوزه"
+    ],
+    "correct-answer-index": 3
+  },
+  {
+    "id": "merged_q0099",
+    "categoryId": "cat4",
+    "points": 100,
+    "title": "من هو اللاعب الذي سجل أكبر عدد من الأهداف في كأس العالم لكرة القدم؟",
+    "question-type": "multiple-choice",
+    "choices": [
+      "دييغو مارادونا",
+      "بيليه",
+      "ميروسلاف كلوزه",
+      "رونالدو"
+    ],
+    "correct-answer-index": 2
+  },
+  {
+    "id": "merged_q0122",
+    "categoryId": "cat4",
+    "points": 100,
+    "title": "'من هو اللاعب الذي فاز بجائزة الكرة الذهبية في عام 2019؟'",
+    "question-type": "multiple-choice",
+    "choices": [
+      "كريستيانو رونالدو",
+      "ليونيل ميسي",
+      "نيمار",
+      "محمد صلاح"
+    ],
+    "correct-answer-index": 1
+  },
+  {
+    "id": "merged_q0146",
+    "categoryId": "cat4",
+    "points": 100,
+    "title": "'محمد صلاح' يلعب في أي نادي؟",
+    "question-type": "multiple-choice",
+    "choices": [
+      "ريال مدريد",
+      "برشلونة",
+      "ليفربول",
+      "مانشستر يونايتد"
+    ],
+    "correct-answer-index": 2
+  },
+  {
+    "id": "merged_q0028",
+    "categoryId": "cat4",
+    "points": 300,
+    "title": "كم عدد الفرق التي شاركت في كأس العالم لكرة القدم عام 2018؟",
+    "question-type": "range",
+    "min-value": 30,
+    "max-value": 40,
+    "correct-answer": 32,
+    "range": 2
+  },
+  {
+    "id": "merged_q0038",
+    "categoryId": "cat4",
+    "points": 300,
+    "title": "من هو أول لاعب كرة قدم عربي يفوز بجائزة الكرة الذهبية؟",
+    "question-type": "multiple-choice",
+    "choices": [
+      "محمد صلاح",
+      "محمود الخطيب",
+      "يوسف شاهين",
+      "رابح ماجر"
+    ],
+    "correct-answer-index": 3
+  },
+  {
+    "id": "merged_q0042",
+    "categoryId": "cat4",
+    "points": 300,
+    "title": "اكتشف هذا النمط المعماري",
+    "question-type": "image",
+    "image-hint": "https://placeholder.com/image/islamic-architecture.jpg"
+  },
+  {
+    "id": "merged_q0046",
+    "categoryId": "cat4",
+    "points": 300,
+    "title": "تعرف على هذه اللهجة العربية",
+    "question-type": "voice",
+    "correct-answer": "اللهجة المصرية"
+  },
+  {
+    "id": "merged_q0050",
+    "categoryId": "cat4",
+    "points": 300,
+    "title": "كم يبلغ عدد اللاعبين في فريق كرة القدم؟",
+    "question-type": "range",
+    "min-value": 10,
+    "max-value": 15,
+    "correct-answer": 11,
+    "range": 1
+  },
+  {
+    "id": "merged_q0054",
+    "categoryId": "cat4",
+    "points": 300,
+    "title": "اكتشف هذا الفن الحركي",
+    "question-type": "video",
+    "choices": [
+      "الكاراتيه",
+      "الجودو",
+      "التايكوندو",
+      "الكونغ فو"
+    ],
+    "correct-answer-index": 2
+  },
+  {
+    "id": "merged_q0058",
+    "categoryId": "cat4",
+    "points": 300,
+    "title": "من هو اللاعب الذي سجل أكبر عدد من الأهداف في كأس العالم لكرة القدم؟",
+    "question-type": "multiple-choice",
+    "choices": [
+      "بيليه",
+      "دييغو مارادونا",
+      "ميروسلاف كلوزه",
+      "رونالدو"
+    ],
+    "correct-answer-index": 2
+  },
+  {
+    "id": "merged_q0079",
+    "categoryId": "cat4",
+    "points": 300,
+    "title": "من هو اللاعب الذي فاز بأكبر عدد من البطولات في التنس؟",
+    "question-type": "multiple-choice",
+    "choices": [
+      "روجر فيدرر",
+      "رافائيل نادال",
+      "نوفاك ديوكوفيتش",
+      "أندي موراي"
+    ],
+    "correct-answer-index": 2
+  },
+  {
+    "id": "merged_q0087",
+    "categoryId": "cat4",
+    "points": 300,
+    "title": "'الأهلي' في القاهرة هو أكثر نادٍ فاز بدوري أبطال أفريقيا. كم عدد المرات التي فاز بها؟",
+    "question-type": "range",
+    "min-value": 5,
+    "max-value": 15,
+    "correct-answer": 10,
+    "range": 2
+  },
+  {
+    "id": "merged_q0114",
+    "categoryId": "cat4",
+    "points": 300,
+    "title": "'من هو اللاعب الذي سجل أكبر عدد من الأهداف في تاريخ كأس العالم؟'",
+    "question-type": "multiple-choice",
+    "choices": [
+      "بيليه",
+      "مارادونا",
+      "رونالدو",
+      "ميسي"
+    ],
+    "correct-answer-index": 2
+  },
+  {
+    "id": "q20",
+    "categoryId": "cat4",
+    "points": 500,
+    "title": "'الزمالك' و'الأهلي' هما فريقان رياضيان مشهوران في أي دولة؟",
+    "question-type": "multiple-choice",
+    "choices": [
+      "السعودية",
+      "الإمارات",
+      "مصر",
+      "الجزائر"
+    ],
+    "correct-answer-index": 2
+  },
+  {
+    "id": "merged_q0065",
+    "categoryId": "cat4",
+    "points": 500,
+    "title": "ما هو الرقم القياسي لأكبر عدد من الأهداف المسجلة في موسم واحد من الدوري الإنجليزي الممتاز؟",
+    "question-type": "range",
+    "min-value": 30,
+    "max-value": 40,
+    "correct-answer": 32,
+    "range": 2
+  },
+  {
+    "id": "merged_q0092",
+    "categoryId": "cat4",
+    "points": 500,
+    "title": "حدد اللاعب الذي سجل هذا الهدف",
+    "question-type": "video",
+    "choices": [
+      "محمد صلاح",
+      "ليونيل ميسي",
+      "كريستيانو رونالدو",
+      "نيمار"
+    ],
+    "correct-answer-index": 0
+  },
+  {
+    "id": "merged_q0106",
+    "categoryId": "cat4",
+    "points": 500,
+    "title": "حدد النطاق الصحيح لعدد الأهداف التي سجلها محمد صلاح مع نادي ليفربول حتى نهاية موسم 2020",
+    "question-type": "range",
+    "min-value": 90,
+    "max-value": 110,
+    "correct-answer": 97,
+    "range": 5,
+    "unit": "هدف"
+  },
+  {
+    "id": "merged_q0130",
+    "categoryId": "cat4",
+    "points": 500,
+    "title": "'من هو اللاعب الذي سجل أكبر عدد من الأهداف في تاريخ الدوري الإسباني؟'",
+    "question-type": "multiple-choice",
+    "choices": [
+      "كريستيانو رونالدو",
+      "ليونيل ميسي",
+      "رونالدينهو",
+      "زين الدين زيدان"
+    ],
+    "correct-answer-index": 1
+  },
+  {
+    "id": "merged_q0138",
+    "categoryId": "cat4",
+    "points": 500,
+    "title": "من هو اللاعب الذي فاز بأكبر عدد من الألقاب في التنس الكبرى؟",
+    "question-type": "multiple-choice",
+    "choices": [
+      "روجر فيدرر",
+      "رافائيل نادال",
+      "نوفاك ديوكوفيتش",
+      "بيت سامبراس"
+    ],
+    "correct-answer-index": 2
+  },
+  {
+    "id": "merged_q0107",
+    "categoryId": "cat5",
+    "points": 100,
+    "title": "ما هو اللون الأساسي في علم السعودية؟",
+    "question-type": "multiple-choice",
+    "choices": [
+      "الأخضر",
+      "الأحمر",
+      "الأبيض",
+      "الأزرق"
+    ],
+    "correct-answer-index": 0
+  },
+  {
+    "id": "merged_q0132",
+    "categoryId": "cat5",
+    "points": 100,
+    "title": "ما هو اللون الذي يرمز للحزن في الثقافة العربية؟",
+    "question-type": "multiple-choice",
+    "choices": [
+      "الأحمر",
+      "الأخضر",
+      "الأسود",
+      "الأزرق"
+    ],
+    "correct-answer-index": 2
+  },
+  {
+    "id": "q5",
+    "categoryId": "cat5",
+    "points": 300,
+    "title": "ما هو اللون الرئيسي في علم السعودية؟",
+    "question-type": "multiple-choice",
+    "choices": [
+      "الأحمر",
+      "الأخضر",
+      "الأزرق",
+      "الأصفر"
+    ],
+    "correct-answer-index": 1
+  },
+  {
+    "id": "merged_q0005",
+    "categoryId": "cat5",
+    "points": 300,
+    "title": "ما هو الطبق الشعبي الأكثر شهرة في السعودية؟",
+    "question-type": "multiple-choice",
+    "choices": [
+      "المنسف",
+      "الكبسة",
+      "الملوخية",
+      "الكشري"
+    ],
+    "correct-answer-index": 1
+  },
+  {
+    "id": "merged_q0015",
+    "categoryId": "cat5",
+    "points": 300,
+    "title": "استمع وحدد الأغنية الشعبية المصرية",
+    "question-type": "voice",
+    "correct-answer": "البته بتسمع مني"
+  },
+  {
+    "id": "q13",
+    "categoryId": "cat5",
+    "points": 300,
+    "title": "استمع وحدد اسم هذا المقام الموسيقي العربي",
+    "question-type": "voice",
+    "correct-answer": "مقام النهاوند"
+  },
+  {
+    "id": "merged_q0059",
+    "categoryId": "cat5",
+    "points": 300,
+    "title": "تعرف على هذا الخط العربي",
+    "question-type": "image",
+    "image-hint": "https://placeholder.com/image/arabic-calligraphy.jpg"
+  },
+  {
+    "id": "merged_q0123",
+    "categoryId": "cat5",
+    "points": 300,
+    "title": "'اكتشف هذا النمط المعماري'",
+    "question-type": "image",
+    "image-hint": "'https://placeholder.com/image/islamic-architecture.jpg'"
+  },
+  {
+    "id": "merged_q0139",
+    "categoryId": "cat5",
+    "points": 300,
+    "title": "ما هو الطبق التقليدي في المغرب؟",
+    "question-type": "multiple-choice",
+    "choices": [
+      "الكسكس",
+      "المنسف",
+      "المقلوبة",
+      "المولوخية"
+    ],
+    "correct-answer-index": 0
+  },
+  {
+    "id": "merged_q0024",
+    "categoryId": "cat5",
+    "points": 500,
+    "title": "من هو مؤلف رواية 'الطوق والأسورة'؟",
+    "question-type": "multiple-choice",
+    "choices": [
+      "نجيب محفوظ",
+      "توفيق الحكيم",
+      "جبرا إبراهيم جبرا",
+      "غسان كنفاني"
+    ],
+    "correct-answer-index": 2
+  },
+  {
+    "id": "merged_q0029",
+    "categoryId": "cat5",
+    "points": 500,
+    "title": "شاهد هذا الفيديو وحدد نوع هذه الرقصة التراثية",
+    "question-type": "video",
+    "choices": [
+      "الدبكة",
+      "الخطوة",
+      "الرقص الشرقي",
+      "السامري"
+    ],
+    "correct-answer-index": 0
+  },
+  {
+    "id": "merged_q0066",
+    "categoryId": "cat5",
+    "points": 500,
+    "title": "'الفنون تغني عن ألف لسان'، ما هو المغزى من هذه المقولة؟",
+    "question-type": "multiple-choice",
+    "choices": [
+      "الفن يعبر عن مشاعر وأفكار لا يمكن التعبير عنها بالكلمات",
+      "الفن يستخدم للتعبير عن الأفكار السياسية",
+      "الفن يستخدم للتعبير عن الحب",
+      "الفن يستخدم للتعبير عن الحزن"
+    ],
+    "correct-answer-index": 0
+  },
+  {
+    "id": "merged_q0080",
+    "categoryId": "cat5",
+    "points": 500,
+    "title": "استمع وحدد نوع هذا المقام الموسيقي",
+    "question-type": "voice",
+    "correct-answer": "مقام الراست"
+  },
+  {
+    "id": "merged_q0115",
+    "categoryId": "cat5",
+    "points": 500,
+    "title": "'تعرف على هذا الخط العربي'",
+    "question-type": "image",
+    "image-hint": "https://placeholder.com/image/arabic-calligraphy.jpg"
+  },
+  {
+    "id": "merged_q0030",
+    "categoryId": "cat6",
+    "points": 100,
+    "title": "ما المعنى اللغوي لكلمة 'جبر'؟",
+    "question-type": "multiple-choice",
+    "choices": [
+      "الإصلاح",
+      "الكسر",
+      "التحطيم",
+      "التدمير"
+    ],
+    "correct-answer-index": 0
+  },
+  {
+    "id": "merged_q0116",
+    "categoryId": "cat6",
+    "points": 100,
+    "title": "'ما معنى كلمة 'جامعة' في اللغة العربية؟'",
+    "question-type": "multiple-choice",
+    "choices": [
+      "مكان التجمع",
+      "مكان التعلم",
+      "مكان العبادة",
+      "مكان القراءة"
+    ],
+    "correct-answer-index": 0
+  },
+  {
+    "id": "merged_q0140",
+    "categoryId": "cat6",
+    "points": 100,
+    "title": "'البَيْتُ' في اللغة العربية يعني؟",
+    "question-type": "multiple-choice",
+    "choices": [
+      "المكان",
+      "المأوى",
+      "المنزل",
+      "كل ما سبق"
+    ],
+    "correct-answer-index": 3
+  },
+  {
+    "id": "merged_q0067",
+    "categoryId": "cat6",
+    "points": 300,
+    "title": "ما هو الجذر اللغوي للكلمة 'أستاذ'؟",
+    "question-type": "multiple-choice",
+    "choices": [
+      "أ س ت",
+      "س ت ز",
+      "س ت أ",
+      "أ ز ت"
+    ],
+    "correct-answer-index": 0
+  },
+  {
+    "id": "merged_q0081",
+    "categoryId": "cat6",
+    "points": 300,
+    "title": "'القلم' في اللغة العربية هو مثال على أي نوع من الأفعال؟",
+    "question-type": "multiple-choice",
+    "choices": [
+      "الفعل المضارع",
+      "الفعل الماضي",
+      "الفعل الأمر",
+      "الاسم"
+    ],
+    "correct-answer-index": 3
+  },
+  {
+    "id": "q6",
+    "categoryId": "cat6",
+    "points": 500,
+    "title": "ما هي اللغة الأم للشاعر جبران خليل جبران؟",
+    "question-type": "multiple-choice",
+    "choices": [
+      "العربية",
+      "الفرنسية",
+      "الإنجليزية",
+      "الأرمنية"
+    ],
+    "correct-answer-index": 0
+  },
+  {
+    "id": "merged_q0006",
+    "categoryId": "cat6",
+    "points": 500,
+    "title": "ما هو الجذر اللغوي للكلمة العربية 'كتاب'؟",
+    "question-type": "multiple-choice",
+    "choices": [
+      "ك-ت-ب",
+      "ك-ت-ا",
+      "ك-ا-ب",
+      "ت-ا-ب"
+    ],
+    "correct-answer-index": 0
+  },
+  {
+    "id": "merged_q0016",
+    "categoryId": "cat6",
+    "points": 500,
+    "title": "ما هو البحر الذي يُستخدم في قصيدة الطويل؟",
+    "question-type": "multiple-choice",
+    "choices": [
+      "البحر الكامل",
+      "البحر الطويل",
+      "البحر المتقارب",
+      "البحر المتدارك"
+    ],
+    "correct-answer-index": 1
+  },
+  {
+    "id": "q14",
+    "categoryId": "cat6",
+    "points": 500,
+    "title": "'الشمس' و'القمر' هما حرفان من أحرف ...؟",
+    "question-type": "multiple-choice",
+    "choices": [
+      "الجر",
+      "الشمسية",
+      "القمرية",
+      "الزائدة"
+    ],
+    "correct-answer-index": 1
+  },
+  {
+    "id": "merged_q0060",
+    "categoryId": "cat6",
+    "points": 500,
+    "title": "ما هو الجذر اللغوي للكلمة 'مكتبة'؟",
+    "question-type": "multiple-choice",
+    "choices": [
+      "ك ت ب",
+      "م ك ت",
+      "ب ت ك",
+      "ت ب ك"
+    ],
+    "correct-answer-index": 0
+  },
+  {
+    "id": "merged_q0075",
+    "categoryId": "cat6",
+    "points": 500,
+    "title": "ما هو الجذر اللغوي للكلمة العربية 'كتاب'؟",
+    "question-type": "multiple-choice",
+    "choices": [
+      "ك ت ب",
+      "ك ت ا",
+      "ك ت ي",
+      "ك ت ر"
+    ],
+    "correct-answer-index": 0
+  },
+  {
+    "id": "merged_q0100",
+    "categoryId": "cat6",
+    "points": 500,
+    "title": "ما هو البحر الشعري لهذه الأبيات؟",
+    "question-type": "voice",
+    "correct-answer": "الطويل"
+  },
+  {
+    "id": "merged_q0124",
+    "categoryId": "cat6",
+    "points": 500,
+    "title": "'ما هو معنى كلمة 'أثرب' في اللغة العربية؟'",
+    "question-type": "multiple-choice",
+    "choices": [
+      "الجمال",
+      "الغناء",
+      "الحكمة",
+      "الشجاعة"
+    ],
+    "correct-answer-index": 1
+  },
+  {
+    "id": "merged_q0133",
+    "categoryId": "cat6",
+    "points": 500,
+    "title": "ما هو الجذر اللغوي لكلمة 'كتاب'؟",
+    "question-type": "multiple-choice",
+    "choices": [
+      "ك-ت-ب",
+      "ك-ت-ا",
+      "ك-ب-ت",
+      "ت-ك-ب"
+    ],
+    "correct-answer-index": 0
+  },
+  {
+    "id": "q7",
+    "categoryId": "cat7",
+    "points": 100,
+    "title": "ما هو عدد الأعمدة الخمسة في الإسلام؟",
+    "question-type": "multiple-choice",
+    "choices": [
+      "3",
+      "4",
+      "5",
+      "6"
+    ],
+    "correct-answer-index": 2
+  },
+  {
+    "id": "merged_q0007",
+    "categoryId": "cat7",
+    "points": 100,
+    "title": "ما هو عدد السور في القرآن الكريم؟",
+    "question-type": "multiple-choice",
+    "choices": [
+      "114",
+      "112",
+      "120",
+      "116"
+    ],
+    "correct-answer-index": 0
+  },
+  {
+    "id": "q15",
+    "categoryId": "cat7",
+    "points": 100,
+    "title": "كم عدد السور في القرآن الكريم؟",
+    "question-type": "range",
+    "min-value": 110,
+    "max-value": 120,
+    "correct-answer": 114,
+    "range": 2
+  },
+  {
+    "id": "merged_q0061",
+    "categoryId": "cat7",
+    "points": 100,
+    "title": "'إن الله وملائكته يصلون على النبي'، ما هو الحكم النحوي لكلمة 'النبي' في هذه الآية؟",
+    "question-type": "multiple-choice",
+    "choices": [
+      "مرفوع",
+      "منصوب",
+      "مجرور",
+      "مضاف"
+    ],
+    "correct-answer-index": 0
+  },
+  {
+    "id": "merged_q0068",
+    "categoryId": "cat7",
+    "points": 100,
+    "title": "'وإذ قال إبراهيم رب اجعل هذا بلدا آمنا'، ما هو الحكم النحوي لكلمة 'إبراهيم' في هذه الآية؟",
+    "question-type": "multiple-choice",
+    "choices": [
+      "مرفوع",
+      "منصوب",
+      "مجرور",
+      "مضاف"
+    ],
+    "correct-answer-index": 0
+  },
+  {
+    "id": "merged_q0076",
+    "categoryId": "cat7",
+    "points": 100,
+    "title": "من هو النبي الذي يُطلق عليه 'خاتم الأنبياء'؟",
+    "question-type": "multiple-choice",
+    "choices": [
+      "إبراهيم",
+      "موسى",
+      "عيسى",
+      "محمد"
+    ],
+    "correct-answer-index": 3
+  },
+  {
+    "id": "merged_q0093",
+    "categoryId": "cat7",
+    "points": 100,
+    "title": "من هو النبي الذي يُطلق عليه لقب خاتم الأنبياء في الإسلام؟",
+    "question-type": "multiple-choice",
+    "choices": [
+      "عيسى",
+      "موسى",
+      "إبراهيم",
+      "محمد"
+    ],
+    "correct-answer-index": 3
+  },
+  {
+    "id": "merged_q0101",
+    "categoryId": "cat7",
+    "points": 100,
+    "title": "كم عدد سور القرآن الكريم؟",
+    "question-type": "multiple-choice",
+    "choices": [
+      "110",
+      "114",
+      "120",
+      "124"
+    ],
+    "correct-answer-index": 1
+  },
+  {
+    "id": "merged_q0125",
+    "categoryId": "cat7",
+    "points": 100,
+    "title": "'من هو النبي الذي يلقب بخاتم الأنبياء؟'",
+    "question-type": "multiple-choice",
+    "choices": [
+      "إبراهيم",
+      "موسى",
+      "عيسى",
+      "محمد"
+    ],
+    "correct-answer-index": 3
+  },
+  {
+    "id": "merged_q0017",
+    "categoryId": "cat7",
+    "points": 300,
+    "title": "كم عدد الركعات في صلاة العشاء؟",
+    "question-type": "range",
+    "min-value": 1,
+    "max-value": 20,
+    "correct-answer": 17,
+    "range": 2,
+    "unit": "ركعة"
+  },
+  {
+    "id": "merged_q0031",
+    "categoryId": "cat7",
+    "points": 300,
+    "title": "تعرف على هذا الخط العربي من صورته",
+    "question-type": "image",
+    "image-hint": "https://placeholder.com/image/khatt_thuluth.jpg"
+  },
+  {
+    "id": "merged_q0117",
+    "categoryId": "cat7",
+    "points": 300,
+    "title": "'من هو هذا القارئ المشهور؟'",
+    "question-type": "voice",
+    "correct-answer": "'عبد الباسط عبد الصمد'"
+  },
+  {
+    "id": "merged_q0134",
+    "categoryId": "cat7",
+    "points": 300,
+    "title": "ما هو عدد سور القرآن الكريم؟",
+    "question-type": "multiple-choice",
+    "choices": [
+      "114",
+      "112",
+      "116",
+      "118"
+    ],
+    "correct-answer-index": 0
+  },
+  {
+    "id": "merged_q0082",
+    "categoryId": "cat7",
+    "points": 500,
+    "title": "من هو الصحابي الذي يُطلق عليه 'سيد المبتسمين'؟",
+    "question-type": "multiple-choice",
+    "choices": [
+      "أبو بكر الصديق",
+      "عمر بن الخطاب",
+      "عثمان بن عفان",
+      "علي بن أبي طالب"
+    ],
+    "correct-answer-index": 0
+  },
+  {
+    "id": "merged_q0108",
+    "categoryId": "cat7",
+    "points": 500,
+    "title": "من هو القارئ المشهور لهذه التلاوة؟",
+    "question-type": "voice",
+    "correct-answer": "الشيخ محمود خليل الحصري"
+  },
+  {
+    "id": "merged_q0141",
+    "categoryId": "cat7",
+    "points": 500,
+    "title": "ما هو عدد الأحاديث في صحيح البخاري؟",
+    "question-type": "multiple-choice",
+    "choices": [
+      "6000 حديث",
+      "7000 حديث",
+      "8000 حديث",
+      "9000 حديث"
+    ],
+    "correct-answer-index": 2
+  },
+  {
+    "id": "merged_q0135",
+    "categoryId": "cat8",
+    "points": 100,
+    "title": "ما هو الحيوان الذي يعتبر رمزاً للحكمة في الثقافة العربية؟",
+    "question-type": "multiple-choice",
+    "choices": [
+      "الأسد",
+      "الثعلب",
+      "الجمل",
+      "النسر"
+    ],
+    "correct-answer-index": 1
+  },
+  {
+    "id": "q8",
+    "categoryId": "cat8",
+    "points": 300,
+    "title": "من هو مؤلف رواية 'الأيام'؟",
+    "question-type": "multiple-choice",
+    "choices": [
+      "نجيب محفوظ",
+      "توفيق الحكيم",
+      "طه حسين",
+      "يوسف إدريس"
+    ],
+    "correct-answer-index": 2
+  },
+  {
+    "id": "merged_q0008",
+    "categoryId": "cat8",
+    "points": 300,
+    "title": "من هو أول رئيس لجمهورية مصر العربية؟",
+    "question-type": "multiple-choice",
+    "choices": [
+      "جمال عبد الناصر",
+      "محمد نجيب",
+      "أنور السادات",
+      "حسني مبارك"
+    ],
+    "correct-answer-index": 1
+  },
+  {
+    "id": "q16",
+    "categoryId": "cat8",
+    "points": 300,
+    "title": "شاهد هذا الفيديو وحدد اسم هذا الفن الحركي",
+    "question-type": "video",
+    "choices": [
+      "التحطيب",
+      "الكابويرا",
+      "التايكوندو",
+      "الكاراتيه"
+    ],
+    "correct-answer-index": 0
+  },
+  {
+    "id": "merged_q0062",
+    "categoryId": "cat8",
+    "points": 300,
+    "title": "من هو مؤلف رواية 'الطوق والاسورة'؟",
+    "question-type": "multiple-choice",
+    "choices": [
+      "نجيب محفوظ",
+      "توفيق الحكيم",
+      "يوسف إدريس",
+      "غسان كنفاني"
+    ],
+    "correct-answer-index": 0
+  },
+  {
+    "id": "merged_q0069",
+    "categoryId": "cat8",
+    "points": 300,
+    "title": "من هو مؤلف رواية 'الأيام'؟",
+    "question-type": "multiple-choice",
+    "choices": [
+      "نجيب محفوظ",
+      "توفيق الحكيم",
+      "يوسف إدريس",
+      "طه حسين"
+    ],
+    "correct-answer-index": 3
+  },
+  {
+    "id": "merged_q0077",
+    "categoryId": "cat8",
+    "points": 300,
+    "title": "ما هو العمل الأدبي الذي كتبه نجيب محفوظ والذي حاز على جائزة نوبل؟",
+    "question-type": "multiple-choice",
+    "choices": [
+      "الثلاثية",
+      "الشهداء",
+      "القاهرة الجديدة",
+      "السقا مات"
+    ],
+    "correct-answer-index": 0
+  },
+  {
+    "id": "merged_q0083",
+    "categoryId": "cat8",
+    "points": 300,
+    "title": "'الأزهر' في القاهرة هو أقدم جامعة في العالم. متى تأسست؟",
+    "question-type": "range",
+    "min-value": 900,
+    "max-value": 1100,
+    "correct-answer": 970,
+    "range": 10
+  },
+  {
+    "id": "merged_q0102",
+    "categoryId": "cat8",
+    "points": 300,
+    "title": "من هو مؤسس الدولة العثمانية؟",
+    "question-type": "multiple-choice",
+    "choices": [
+      "محمد الفاتح",
+      "سليمان القانوني",
+      "عثمان بن ارطغرل",
+      "أرطغرل"
+    ],
+    "correct-answer-index": 2
+  },
+  {
+    "id": "merged_q0109",
+    "categoryId": "cat8",
+    "points": 300,
+    "title": "من هو مؤلف رواية 'الطيب الصالح'؟",
+    "question-type": "multiple-choice",
+    "choices": [
+      "نجيب محفوظ",
+      "توفيق الحكيم",
+      "طه حسين",
+      "غسان كنفاني"
+    ],
+    "correct-answer-index": 0
+  },
+  {
+    "id": "merged_q0126",
+    "categoryId": "cat8",
+    "points": 300,
+    "title": "'حدد نوع هذه الظاهرة الطبيعية'",
+    "question-type": "video",
+    "choices": [
+      "الزلازل",
+      "البراكين",
+      "الأعاصير",
+      "الفيضانات"
+    ],
+    "correct-answer-index": 1
+  },
+  {
+    "id": "merged_q0142",
+    "categoryId": "cat8",
+    "points": 300,
+    "title": "'الجمل' في الثقافة العربية يرمز إلى؟",
+    "question-type": "multiple-choice",
+    "choices": [
+      "الصبر",
+      "القوة",
+      "الجمال",
+      "السرعة"
+    ],
+    "correct-answer-index": 0
+  },
+  {
+    "id": "merged_q0018",
+    "categoryId": "cat8",
+    "points": 500,
+    "title": "شاهد الفيديو وحدد الرقصة التقليدية",
+    "question-type": "video",
+    "choices": [
+      "الدبكة",
+      "الرقصة البلدي",
+      "الرقصة الفلكلورية",
+      "الرقصة الشعبية"
+    ],
+    "correct-answer-index": 0
+  },
+  {
+    "id": "merged_q0032",
+    "categoryId": "cat8",
+    "points": 500,
+    "title": "استمع وحدد من هو هذا القارئ المشهور",
+    "question-type": "voice",
+    "correct-answer": "عبد الباسط عبد الصمد"
+  },
+  {
+    "id": "merged_q0118",
+    "categoryId": "cat8",
+    "points": 500,
+    "title": "'حدد اسم هذه المعركة التاريخية'",
+    "question-type": "video",
+    "choices": [
+      "معركة القادسية",
+      "معركة اليرموك",
+      "معركة كربلاء",
+      "معركة الجمل"
+    ],
+    "correct-answer-index": 2
+  }
+]
