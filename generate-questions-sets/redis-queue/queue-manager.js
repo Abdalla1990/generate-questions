@@ -4,8 +4,8 @@ const path = require('path');
 const fs = require('fs');
 
 // Load environment variables
-const envPath = path.join(__dirname, '..', '..', '..', '.env.dev');
-const fallbackEnvPath = path.join(__dirname, '..', '..', '..', '.env');
+const envPath = path.join(__dirname, '../', '../', '.env.dev');
+const fallbackEnvPath = path.join(__dirname, '../', '../', '.env');
 
 if (fs.existsSync(envPath)) {
   require('dotenv').config({ path: envPath });
@@ -16,21 +16,26 @@ if (fs.existsSync(envPath)) {
 class QueueManager {
   constructor() {
     this.redisConfig = {
-      host: process.env.REDIS_HOST || 'localhost',
-      port: process.env.REDIS_PORT || 6379,
+      username: 'default',
       password: process.env.REDIS_PASSWORD || undefined,
-      db: process.env.REDIS_DB || 0
+      socket: {
+        host: process.env.REDIS_HOST || 'localhost',
+        port: process.env.REDIS_PORT || 6379,
+        db: process.env.REDIS_DB || 0
+      }
     };
 
     this.client = null;
     this.isConnected = false;
   }
 
+
   /**
    * Connect to Redis
    */
   async connect() {
     try {
+      console.log(`🔧 Redis Config: ${JSON.stringify(this.redisConfig)}`, { exists: fs.existsSync(envPath) });
       this.client = Redis.createClient(this.redisConfig);
 
       this.client.on('error', (err) => {
@@ -72,7 +77,7 @@ class QueueManager {
    * @returns {string} - Redis key for the category queue
    */
   getCategoryQueueKey(categoryId) {
-    return `question_sets:queue:${categoryId}`;
+    return `question_sets: queue:${categoryId} `;
   }
 
   /**
@@ -81,7 +86,7 @@ class QueueManager {
    * @returns {string} - Redis key for the category metadata
    */
   getCategoryMetaKey(categoryId) {
-    return `question_sets:meta:${categoryId}`;
+    return `question_sets: meta:${categoryId} `;
   }
 
   /**
@@ -103,7 +108,7 @@ class QueueManager {
       const result = await this.client.lPush(queueKey, setIds);
 
       // Update metadata: total sets available and last updated
-      await this.client.hMSet(metaKey, {
+      await this.client.hSet(metaKey, {
         total_available: await this.client.lLen(queueKey),
         last_updated: new Date().toISOString(),
         last_batch_size: setIds.length
@@ -112,7 +117,7 @@ class QueueManager {
       console.log(`✅ Added ${setIds.length} sets to queue for category ${categoryId}`);
       return result;
     } catch (error) {
-      console.error(`❌ Error adding sets to queue for category ${categoryId}:`, error);
+      console.error(`❌ Error adding sets to queue for category ${categoryId}: `, error);
       throw error;
     }
   }
@@ -139,12 +144,12 @@ class QueueManager {
         const remainingCount = await this.client.lLen(queueKey);
         await this.client.hSet(metaKey, 'total_available', remainingCount);
 
-        console.log(`📤 Retrieved set ${setId} from queue for category ${categoryId}. ${remainingCount} sets remaining.`);
+        console.log(`📤 Retrieved set ${setId} from queue for category ${categoryId}.${remainingCount} sets remaining.`);
       }
 
       return setId;
     } catch (error) {
-      console.error(`❌ Error getting next set from queue for category ${categoryId}:`, error);
+      console.error(`❌ Error getting next set from queue for category ${categoryId}: `, error);
       throw error;
     }
   }
@@ -176,7 +181,7 @@ class QueueManager {
         meta_key: metaKey
       };
     } catch (error) {
-      console.error(`❌ Error getting queue status for category ${categoryId}:`, error);
+      console.error(`❌ Error getting queue status for category ${categoryId}: `, error);
       throw error;
     }
   }
@@ -228,7 +233,7 @@ class QueueManager {
       console.log(`🧹 Cleared queue for category ${categoryId}`);
       return true;
     } catch (error) {
-      console.error(`❌ Error clearing queue for category ${categoryId}:`, error);
+      console.error(`❌ Error clearing queue for category ${categoryId}: `, error);
       throw error;
     }
   }
