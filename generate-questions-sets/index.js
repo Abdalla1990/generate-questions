@@ -1,45 +1,16 @@
 // generate-questions-sets.js - Generate question sets for each category
-const AWS = require('aws-sdk');
-const fs = require('fs');
-const path = require('path');
 const { v4: uuidv4 } = require('uuid');
 const SetTracker = require('./redis-queue/set-tracker');
+const {
+  dynamoDb,
+  dynamoDbAdmin,
+  TABLES,
+  ensureQuestionSetsTableExists
+} = require('../shared/dynamodb-config');
 
-// Load environment variables
-const envPath = path.join(__dirname, '..', '..', '..', '.env.dev');
-const fallbackEnvPath = path.join(__dirname, '..', '..', '..', '.env');
-
-if (fs.existsSync(envPath)) {
-  require('dotenv').config({ path: envPath });
-} else if (fs.existsSync(fallbackEnvPath)) {
-  require('dotenv').config({ path: fallbackEnvPath });
-}
-
-// DynamoDB configuration
-const local = {
-  region: "us-east-1",
-  endpoint: "http://localhost:8000",
-  credentials: {
-    accessKeyId: "dummy",
-    secretAccessKey: "dummy",
-  }
-};
-
-const AWS_REGION = process.env.AWS_REGION || 'us-east-1';
-const QUESTIONS_TABLE = process.env.DYNAMODB_TABLE_NAME || 'questions';
-const SETS_TABLE = 'question_sets';
-
-AWS.config.update({
-  ...local,
-  ...(process.env.AWS_ACCESS_KEY_ID && process.env.AWS_SECRET_ACCESS_KEY && {
-    region: AWS_REGION,
-    accessKeyId: process.env.AWS_ACCESS_KEY_ID,
-    secretAccessKey: process.env.AWS_SECRET_ACCESS_KEY
-  })
-});
-
-const dynamoDb = new AWS.DynamoDB.DocumentClient();
-const dynamoDbAdmin = new AWS.DynamoDB();
+// Load supported categories from categories.json
+const fs = require('fs');
+const path = require('path');
 
 /**
  * Load supported categories from categories.json
@@ -56,46 +27,7 @@ function loadCategories() {
  * @returns {Promise<boolean>} - Returns true if table exists or was created successfully
  */
 async function ensureSetsTableExists() {
-  try {
-    // Check if table exists
-    await dynamoDbAdmin.describeTable({ TableName: SETS_TABLE }).promise();
-    console.log(`✅ DynamoDB table '${SETS_TABLE}' already exists`);
-    return true;
-  } catch (error) {
-    if (error.code === 'ResourceNotFoundException') {
-      console.log(`🔧 Creating DynamoDB table '${SETS_TABLE}'...`);
-
-      const tableParams = {
-        TableName: SETS_TABLE,
-        KeySchema: [
-          { AttributeName: 'id', KeyType: 'HASH' }
-        ],
-        AttributeDefinitions: [
-          { AttributeName: 'id', AttributeType: 'S' },
-          { AttributeName: 'category_id', AttributeType: 'S' }
-        ],
-        BillingMode: 'PAY_PER_REQUEST',
-        GlobalSecondaryIndexes: [
-          {
-            IndexName: 'category-index',
-            KeySchema: [
-              { AttributeName: 'category_id', KeyType: 'HASH' }
-            ],
-            Projection: { ProjectionType: 'ALL' }
-          }
-        ]
-      };
-
-      await dynamoDbAdmin.createTable(tableParams).promise();
-      await dynamoDbAdmin.waitFor('tableExists', { TableName: SETS_TABLE }).promise();
-
-      console.log(`✅ DynamoDB table '${SETS_TABLE}' created successfully`);
-      return true;
-    } else {
-      console.error('❌ Error checking/creating DynamoDB table:', error);
-      throw error;
-    }
-  }
+  return ensureQuestionSetsTableExists();
 }
 
 /**
@@ -105,7 +37,7 @@ async function ensureSetsTableExists() {
  */
 async function getLastReadQuestionId(categoryId) {
   const params = {
-    TableName: SETS_TABLE,
+    TableName: TABLES.QUESTION_SETS,
     IndexName: 'category-index',
     KeyConditionExpression: 'category_id = :category_id',
     ExpressionAttributeValues: {
@@ -138,7 +70,7 @@ async function getLastReadQuestionId(categoryId) {
  */
 async function getQuestionsByCategory(categoryId, lastReadQuestionId = null) {
   let params = {
-    TableName: QUESTIONS_TABLE,
+    TableName: TABLES.QUESTIONS,
     FilterExpression: 'categoryId = :category',
     ExpressionAttributeValues: {
       ':category': categoryId
@@ -212,18 +144,19 @@ async function storeSetsForCategory(categoryId, sets, allQuestionsUsed, setTrack
 
   for (let setIndex = 0; setIndex < sets.length; setIndex++) {
     const setId = uuidv4();
-    const questionIds = sets[setIndex].map(q => q.id);
+    const questionKeys = sets[setIndex].map(q => ({ id: q.id, hash: q.hash }));
 
     const setItem = {
       id: setId,
       category_id: categoryId,
-      question_ids: questionIds,
+      question_keys: questionKeys, // Store both id and hash
+      question_ids: sets[setIndex].map(q => q.id), // Keep for backwards compatibility
       created_at: new Date().toISOString(),
       offset: lastQuestionUsed // Use the highest ID from all questions used in this batch
     };
 
     const params = {
-      TableName: SETS_TABLE,
+      TableName: TABLES.QUESTION_SETS,
       Item: setItem
     };
 

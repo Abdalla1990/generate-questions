@@ -11,7 +11,10 @@
     "setup": "cp .env.example .env && echo 'Created .env - please add your API keys!'",
     "env:check": "node --require dotenv/config -e \"console.log('Environment loaded:', {NODE_ENV: process.env.NODE_ENV, OPENAI_KEY: process.env.OPENAI_API_KEY ? 'SET' : 'NOT_SET', STABILITY_KEY: process.env.STABILITY_API_KEY ? 'SET' : 'NOT_SET'})\"",
     "env:check:dev": "node --require dotenv/config -e \"console.log('Dev Environment loaded:', {NODE_ENV: process.env.NODE_ENV, OPENAI_KEY: process.env.OPENAI_API_KEY ? 'SET' : 'NOT_SET', STABILITY_KEY: process.env.STABILITY_API_KEY ? 'SET' : 'NOT_SET'})\" dotenv_config_path=.env.dev",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "sets:generate": "node generate-questions-sets/index.js",
+    "sets:queue": "node generate-questions-sets/redis-queue/cli.js",
+    "sets:allocate": "node generate-questions-sets/allocate-questions-sets.js",
+    "merge-questions": "node merge-questions/cli.js"
   },
   "author": "",
   "license": "ISC",

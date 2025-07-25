@@ -1,85 +1,17 @@
-const local = {
-  region: "us-east-1",
-  endpoint: "http://localhost:8000",
-  credentials: {
-    accessKeyId: "dummy",
-    secretAccessKey: "dummy",
-  }
-}
-
 // database.js - DynamoDB connection and configuration
-const AWS = require('aws-sdk');
-
-// Configure AWS region and credentials
-// These can be set via environment variables:
-// AWS_REGION, AWS_ACCESS_KEY_ID, AWS_SECRET_ACCESS_KEY
-const AWS_REGION = process.env.AWS_REGION || 'us-east-1';
-const TABLE_NAME = process.env.DYNAMODB_TABLE_NAME || 'questions';
-
-// Configure AWS SDK
-AWS.config.update({
-  ...local,
-  ...(process.env.AWS_ACCESS_KEY_ID && process.env.AWS_SECRET_ACCESS_KEY && {
-    region: AWS_REGION,
-    accessKeyId: process.env.AWS_ACCESS_KEY_ID,
-    secretAccessKey: process.env.AWS_SECRET_ACCESS_KEY
-  })
-});
-
-// Create DynamoDB document client
-const dynamoDb = new AWS.DynamoDB.DocumentClient();
+const {
+  dynamoDb,
+  dynamoDbAdmin,
+  TABLES,
+  ensureQuestionsTableExists
+} = require('../../../shared/dynamodb-config');
 
 /**
  * Create the questions table if it doesn't exist
  * @returns {Promise<boolean>} - Returns true if table exists or was created successfully
  */
 async function ensureTableExists() {
-  const dynamoDbAdmin = new AWS.DynamoDB();
-
-  try {
-    // Check if table exists
-    await dynamoDbAdmin.describeTable({ TableName: TABLE_NAME }).promise();
-    console.log(`✅ DynamoDB table '${TABLE_NAME}' already exists`);
-    return true;
-  } catch (error) {
-    if (error.code === 'ResourceNotFoundException') {
-      console.log(`🔧 Creating DynamoDB table '${TABLE_NAME}'...`);
-
-      const tableParams = {
-        TableName: TABLE_NAME,
-        KeySchema: [
-          { AttributeName: 'id', KeyType: 'HASH' }, // Partition key
-          { AttributeName: 'hash', KeyType: 'RANGE' } // Sort key
-        ],
-        AttributeDefinitions: [
-          { AttributeName: 'id', AttributeType: 'S' },
-          { AttributeName: 'hash', AttributeType: 'S' }
-        ],
-        BillingMode: 'PAY_PER_REQUEST', // On-demand billing
-        GlobalSecondaryIndexes: [
-          {
-            IndexName: 'hash-index',
-            KeySchema: [
-              { AttributeName: 'hash', KeyType: 'HASH' }
-            ],
-            Projection: { ProjectionType: 'ALL' }
-          }
-        ]
-      };
-
-      await dynamoDbAdmin.createTable(tableParams).promise();
-
-      // Wait for table to be active
-      console.log(`⏳ Waiting for table '${TABLE_NAME}' to be active...`);
-      await dynamoDbAdmin.waitFor('tableExists', { TableName: TABLE_NAME }).promise();
-
-      console.log(`✅ DynamoDB table '${TABLE_NAME}' created successfully`);
-      return true;
-    } else {
-      console.error('❌ Error checking/creating DynamoDB table:', error);
-      throw error;
-    }
-  }
+  return ensureQuestionsTableExists();
 }
 
 /**
@@ -88,7 +20,6 @@ async function ensureTableExists() {
  */
 async function testConnection() {
   try {
-    const dynamoDbAdmin = new AWS.DynamoDB();
     await dynamoDbAdmin.listTables({ Limit: 1 }).promise();
     console.log('✅ DynamoDB connection successful');
     return true;
@@ -105,10 +36,10 @@ async function testConnection() {
  */
 async function putItem(item) {
   const params = {
-    TableName: TABLE_NAME,
+    TableName: TABLES.QUESTIONS,
     Item: item,
-    // Prevent overwriting existing items with the same id and hash
-    ConditionExpression: 'attribute_not_exists(id) AND attribute_not_exists(hash)'
+    // Prevent overwriting existing items with the same id
+    ConditionExpression: 'attribute_not_exists(id)'
   };
 
   try {
@@ -124,18 +55,15 @@ async function putItem(item) {
 }
 
 /**
- * Get an item from the DynamoDB table by id and hash
+ * Get an item from the DynamoDB table by id
  * @param {string} id - The question ID
- * @param {string} hash - The question hash
+ * @param {string} hash - The question hash (optional, for backwards compatibility)
  * @returns {Promise<Object|null>} - Returns the item or null if not found
  */
-async function getItem(id, hash) {
+async function getItem(id, hash = null) {
   const params = {
-    TableName: TABLE_NAME,
-    Key: {
-      id: id,
-      hash: hash
-    }
+    TableName: TABLES.QUESTIONS,
+    Key: { id }
   };
 
   try {
@@ -154,7 +82,7 @@ async function getItem(id, hash) {
  */
 async function getItemsByHash(hash) {
   const params = {
-    TableName: TABLE_NAME,
+    TableName: TABLES.QUESTIONS,
     IndexName: 'hash-index',
     KeyConditionExpression: '#hash = :hash',
     ExpressionAttributeNames: {
@@ -194,7 +122,7 @@ async function batchPutItems(items) {
 
     const params = {
       RequestItems: {
-        [TABLE_NAME]: batch.map(item => ({
+        [TABLES.QUESTIONS]: batch.map(item => ({
           PutRequest: {
             Item: item
           }
@@ -207,8 +135,8 @@ async function batchPutItems(items) {
       processedItems += batch.length;
 
       // Handle unprocessed items
-      if (result.UnprocessedItems && result.UnprocessedItems[TABLE_NAME]) {
-        unprocessedItems.push(...result.UnprocessedItems[TABLE_NAME]);
+      if (result.UnprocessedItems && result.UnprocessedItems[TABLES.QUESTIONS]) {
+        unprocessedItems.push(...result.UnprocessedItems[TABLES.QUESTIONS]);
       }
     } catch (error) {
       console.error(`❌ Error in batch write (batch ${Math.floor(i / batchSize) + 1}):`, error);
@@ -274,8 +202,7 @@ module.exports = {
   getItemsByHash,
   batchPutItems,
   storeQuestionsFromFile,
-  TABLE_NAME,
-  AWS_REGION
+  TABLES
 };
 
 /**
