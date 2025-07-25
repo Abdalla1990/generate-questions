@@ -18,6 +18,7 @@ const { validateQuestions } = require('./validation');
 const { analyzeQuestionTypeDistribution, analyzeCategoryDistribution } = require('./distribution');
 const { processAllQuestions, getProcessingStats, resetProcessingStats } = require('./processing');
 const { storeQuestions, generateStorageStats } = require('./storage');
+const { storeQuestionsWithSemanticDeduplication } = require('./enhanced-storage');
 
 /**
  * Get elapsed time since start in a human-readable format
@@ -92,23 +93,25 @@ async function generateGPTQuestions(numQuestions = null) {
     analyzeQuestionTypeDistribution(questions);
     analyzeCategoryDistribution(questions);
 
-    // Store questions in DynamoDB
-    console.log(`⏱️  [${getElapsedTime(executionStart)}] Storing questions in DynamoDB...`);
+    // Store questions in DynamoDB with semantic deduplication
+    console.log(`⏱️  [${getElapsedTime(executionStart)}] Storing questions with semantic deduplication...`);
     let storageResult = null;
     try {
-      storageResult = await storeQuestions(questions, {
+      storageResult = await storeQuestionsWithSemanticDeduplication(questions, {
         checkDuplicates: true,
         skipOnDuplicate: true,
-        useBatch: true
+        useBatch: true,
+        semanticThreshold: 0.85 // 85% similarity threshold for duplicates
       });
-      console.log(`✅ DynamoDB storage complete: ${storageResult.stored} stored, ${storageResult.skipped} skipped, ${storageResult.failed} failed`);
+      console.log(`✅ Storage complete: ${storageResult.stored} stored, ${storageResult.semanticDuplicatesSkipped} semantic duplicates skipped, ${storageResult.hashDuplicatesSkipped} hash duplicates skipped, ${storageResult.failed} failed`);
     } catch (error) {
-      console.error(`⚠️  DynamoDB storage failed: ${error.message}`);
+      console.error(`⚠️  Storage failed: ${error.message}`);
       // Continue execution even if storage fails
       storageResult = {
         total: questions.length,
         stored: 0,
-        skipped: 0,
+        semanticDuplicatesSkipped: 0,
+        hashDuplicatesSkipped: 0,
         failed: questions.length,
         error: error.message
       };
@@ -144,7 +147,8 @@ async function generateGPTQuestions(numQuestions = null) {
     console.log(`Audio failed: ${processingStats.audio.failed}`);
     console.log('\nStorage Statistics:');
     console.log(`Questions stored in DynamoDB: ${storageResult ? storageResult.stored : 0}`);
-    console.log(`Questions skipped (duplicates): ${storageResult ? storageResult.skipped : 0}`);
+    console.log(`Semantic duplicates skipped: ${storageResult ? storageResult.semanticDuplicatesSkipped : 0}`);
+    console.log(`Hash duplicates skipped: ${storageResult ? storageResult.hashDuplicatesSkipped : 0}`);
     console.log(`Storage failures: ${storageResult ? storageResult.failed : 0}`);
     console.log('============================\n');
 
@@ -192,18 +196,24 @@ async function generateGPTQuestions(numQuestions = null) {
       storage: {
         dynamodb: storageResult ? {
           stored: storageResult.stored,
-          skipped: storageResult.skipped,
+          semanticDuplicatesSkipped: storageResult.semanticDuplicatesSkipped,
+          hashDuplicatesSkipped: storageResult.hashDuplicatesSkipped,
+          totalSkipped: (storageResult.semanticDuplicatesSkipped || 0) + (storageResult.hashDuplicatesSkipped || 0),
           failed: storageResult.failed,
           total: storageResult.total,
           successRate: storageResult.total > 0 ?
             ((storageResult.stored / storageResult.total) * 100).toFixed(1) + '%' : 'N/A',
+          semanticDeduplicationEnabled: true,
           error: storageResult.error || null
         } : {
           stored: 0,
-          skipped: 0,
+          semanticDuplicatesSkipped: 0,
+          hashDuplicatesSkipped: 0,
+          totalSkipped: 0,
           failed: 0,
           total: 0,
           successRate: 'N/A',
+          semanticDeduplicationEnabled: true,
           error: 'Storage not attempted'
         }
       },
