@@ -1,5 +1,6 @@
 // generator.js - Main OpenAI generation logic
 const { OpenAI } = require('openai');
+const { v4: uuidv4 } = require('uuid');
 const {
   requiredFields,
   CATEGORIES,
@@ -134,10 +135,11 @@ TARGET AUDIENCE:
 CRITICAL OUTPUT REQUIREMENTS:
 1. Return ONLY a complete, valid JSON array.
 2. Each question object MUST have ALL required fields properly filled.
-3. NEVER leave any field empty or incomplete.
-4. ALL string values MUST use double quotes (").
-5. DO NOT use string concatenation or template literals.
-6. DO NOT include any text before or after the JSON.
+3. The "id" field for each question MUST be a random, unique string (e.g., a random alphanumeric string or UUID-like format). Do NOT use sequential numbers or fixed values.
+4. NEVER leave any field empty or incomplete.
+5. ALL string values MUST use double quotes (").
+6. DO NOT use string concatenation or template literals.
+7. DO NOT include any text before or after the JSON.
 
 COMPLETION REQUIREMENTS:
 • EVERY question MUST have ALL its required fields
@@ -528,6 +530,12 @@ function parseQuestionsFromResponse(response) {
     if (!questions || !Array.isArray(questions)) {
       throw new Error('No valid questions array in response');
     }
+
+    // Assign a new UUID to each question
+    questions = questions.map(q => ({
+      ...q,
+      id: uuidv4()
+    }));
 
     console.log(`Successfully parsed ${questions.length} questions`);
     return questions;

@@ -41,14 +41,18 @@ const TABLES = {
 const AWS_REGION = process.env.AWS_REGION || 'us-east-1';
 
 // Configure AWS SDK with conditional production/local settings
-const awsConfig = {
-  ...localConfig,
-  ...(process.env.AWS_ACCESS_KEY_ID && process.env.AWS_SECRET_ACCESS_KEY && {
+const isLocal =
+  process.env.NODE_ENV === 'development' ||
+  !process.env.AWS_ACCESS_KEY_ID ||
+  !process.env.AWS_SECRET_ACCESS_KEY;
+
+const awsConfig = isLocal
+  ? localConfig
+  : {
     region: AWS_REGION,
     accessKeyId: process.env.AWS_ACCESS_KEY_ID,
     secretAccessKey: process.env.AWS_SECRET_ACCESS_KEY
-  })
-};
+  };
 
 AWS.config.update(awsConfig);
 
