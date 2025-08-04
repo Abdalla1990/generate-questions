@@ -267,7 +267,7 @@ async function generateQuestionSets(numSetsPerCategory, questionsPerSet, useRedi
     }
 
     console.log('\n🎉 Question sets generation completed successfully!');
-
+    return new Promise((resolve) => resolve({ setsGenerated: true, categoriesProcessed: categories.length }));
   } catch (error) {
     console.error('❌ Error generating question sets:', error);
     throw error;

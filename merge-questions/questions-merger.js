@@ -46,30 +46,23 @@ class QuestionsMerger {
 
   /**
    * Get or allocate a new set for a user and category
+   * Gets a new set that the user doesn't currently have allocated (in current cache)
+   * After cache eviction, users can get the same sets again (this is intentional)
    * @param {string} userId - The user ID
    * @param {string} categoryId - The category ID
    * @returns {Promise<string|null>} - The set ID or null if none available
    */
   async getOrAllocateSetForUser(userId, categoryId) {
     try {
-      // Check if user already has allocated sets for this category
-      const userAllocations = await this.queueManager.getUserCategoryAllocations(userId, categoryId);
-
-      if (userAllocations.length > 0) {
-        // Return the most recently allocated set
-        const lastAllocatedSet = userAllocations[userAllocations.length - 1];
-        console.log(`📦 Using existing allocated set ${lastAllocatedSet} for user ${userId}, category ${categoryId}`);
-        return lastAllocatedSet;
-      }
-
-      // No existing allocation, get a new set
+      // Always get a new set that the user doesn't currently have allocated
+      // The queue manager handles cache eviction, so users can see same sets again after eviction
       const newSetId = await this.queueManager.getNextAvailableSetForUser(userId, categoryId);
 
       if (newSetId) {
         console.log(`🎯 Allocated new set ${newSetId} for user ${userId}, category ${categoryId}`);
         return newSetId;
       } else {
-        console.log(`⚠️  No sets available for user ${userId}, category ${categoryId}`);
+        console.log(`⚠️  No new sets available for user ${userId}, category ${categoryId} - user has current allocations for all available sets`);
         return null;
       }
     } catch (error) {
@@ -140,7 +133,7 @@ class QuestionsMerger {
             }).filter(key => key !== null)
           }
         };
-
+        console.log(`🔄 Fetching requestItems`, { requestItems: JSON.stringify(requestItems) });
         // If we have valid keys, use batch get
         if (requestItems[TABLES.QUESTIONS].Keys.length > 0) {
           const params = {
@@ -268,6 +261,15 @@ class QuestionsMerger {
 
     console.log(`\n🎉 Question merge completed for user ${userId}`);
     console.log(`📊 Summary: ${result.summary.totalQuestions} questions from ${result.summary.successfulCategories}/${result.summary.totalCategories} categories`);
+
+    // Write merged questions to a JSON file
+    const outputPath = path.join(process.cwd(), `merged-questions-${userId}.json`);
+    try {
+      fs.writeFileSync(outputPath, JSON.stringify(result.questions, null, 2), 'utf8');
+      console.log(`\n💾 Merged questions written to: ${outputPath}`);
+    } catch (err) {
+      console.error(`❌ Failed to write merged questions to file:`, err);
+    }
 
     return result;
   }

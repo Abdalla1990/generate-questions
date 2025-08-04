@@ -394,16 +394,17 @@ class QueueManager {
       // Get all available sets for this category
       const availableSets = await this.client.lRange(queueKey, 0, -1);
 
-      // Find the first set that hasn't been allocated to this user
+      // Find the first set that hasn't been allocated to this user (in current cache)
       const nextSet = availableSets.find(setId => !userAllocations.includes(setId));
 
       if (nextSet) {
         // Allocate this set to the user with timestamp (but don't remove from global queue)
         await this.addUserCategoryAllocationWithTimestamp(userId, categoryId, nextSet);
-        // Note: addUserCategoryAllocationWithTimestamp already logs the allocation
+
+        console.log(`✅ Allocated set ${nextSet} to user ${userId}, category ${categoryId} (current allocations: ${userAllocations.length + 1})`);
         return nextSet;
       } else {
-        console.log(`⚠️  No new sets available for user ${userId} in category ${categoryId}`);
+        console.log(`⚠️  No new sets available for user ${userId} in category ${categoryId} - user has current allocations for all ${userAllocations.length} available sets`);
         return null;
       }
     } catch (error) {
@@ -503,10 +504,12 @@ class QueueManager {
   /**
    * Cache eviction policy configuration
    */
-  static CACHE_CONFIG = {
-    MAX_SETS_PER_CATEGORY: 10,
-    MAX_AGE_MONTHS: 2
-  };
+  static getCacheConfig() {
+    return {
+      MAX_SETS_PER_CATEGORY: 10,
+      MAX_AGE_MONTHS: 2
+    };
+  }
 
   /**
    * Apply cache eviction policy for a user's category
@@ -925,13 +928,12 @@ class QueueManager {
     console.log(`📝 Cache configuration updated:`, QueueManager.CACHE_CONFIG);
   }
 
-  /**
-   * Get current cache configuration
-   * @returns {Object} - Current cache configuration
-   */
-  static getCacheConfig() {
-    return { ...QueueManager.CACHE_CONFIG };
-  }
 }
+
+// Static cache configuration for older Node.js compatibility
+QueueManager.CACHE_CONFIG = {
+  MAX_SETS_PER_CATEGORY: 10,
+  MAX_AGE_MONTHS: 2
+};
 
 module.exports = QueueManager;

@@ -33,7 +33,7 @@ const localConfig = {
 
 // Table names
 const TABLES = {
-  QUESTIONS: process.env.DYNAMODB_TABLE_NAME || 'questions',
+  QUESTIONS: process.env.DYNAMODB_TABLE_NAME || 'questions-new',
   QUESTION_SETS: 'question_sets'
 };
 
@@ -101,12 +101,13 @@ async function ensureTableExists(tableName, tableConfig) {
 async function ensureQuestionsTableExists() {
   const tableConfig = {
     KeySchema: [
-      { AttributeName: 'id', KeyType: 'HASH' }
+      { AttributeName: 'id', KeyType: 'HASH' },
+      { AttributeName: 'hash', KeyType: 'RANGE' }
     ],
     AttributeDefinitions: [
       { AttributeName: 'id', AttributeType: 'S' },
-      { AttributeName: 'categoryId', AttributeType: 'S' },
-      { AttributeName: 'hash', AttributeType: 'S' }
+      { AttributeName: 'hash', AttributeType: 'S' },
+      { AttributeName: 'categoryId', AttributeType: 'S' }
     ],
     GlobalSecondaryIndexes: [
       {
