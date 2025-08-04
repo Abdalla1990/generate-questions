@@ -6,6 +6,19 @@ import cors from 'cors';
 import path from 'path';
 import { fileURLToPath } from 'url';
 import { dirname } from 'path';
+import dotenv from 'dotenv';
+
+// Load environment variables from root directory
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = dirname(__filename);
+const rootDir = path.join(__dirname, '../../');
+
+// Load the appropriate .env file based on NODE_ENV
+const envFile = process.env.NODE_ENV === 'development' ? '.env.dev' : '.env';
+const envPath = path.join(rootDir, envFile);
+
+console.log(`🔧 Loading environment from: ${envPath}`);
+dotenv.config({ path: envPath });
 
 // Import our wrapped CommonJS modules
 import { generateQuestionSets } from '../wrappers/generate-questions-sets-wrapper.js';
@@ -15,12 +28,15 @@ import QuestionsMerger from '../wrappers/questions-merger-wrapper.js';
 
 const app = express();
 const PORT = process.env.PORT || 3000;
+
 // Security middleware
 app.use(helmet());
-app.use(cors());
+app.use(cors({
+  origin: process.env.CORS_ORIGIN || '*'
+}));
 app.use(express.json({ limit: '10mb' }));
 
-// Rate limiting
+// Rate limiting with environment configuration
 const createRateLimit = (windowMs, max, message) => rateLimit({
   windowMs,
   max,
@@ -30,8 +46,16 @@ const createRateLimit = (windowMs, max, message) => rateLimit({
 });
 
 // Different rate limits for different endpoints
-const generalLimit = createRateLimit(15 * 60 * 1000, 100, 'Too many requests'); // 100 requests per 15 minutes
-const heavyLimit = createRateLimit(60 * 60 * 1000, 10, 'Too many heavy operations'); // 10 per hour for heavy operations
+const generalLimit = createRateLimit(
+  parseInt(process.env.RATE_LIMIT_WINDOW_MS) || 15 * 60 * 1000,
+  parseInt(process.env.RATE_LIMIT_MAX_REQUESTS) || 100,
+  'Too many requests'
+);
+const heavyLimit = createRateLimit(
+  parseInt(process.env.HEAVY_RATE_LIMIT_WINDOW_MS) || 60 * 60 * 1000,
+  parseInt(process.env.HEAVY_RATE_LIMIT_MAX_REQUESTS) || 10,
+  'Too many heavy operations'
+);
 
 // Apply general rate limiting to all routes
 app.use('/api/', generalLimit);

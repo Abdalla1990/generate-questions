@@ -6,13 +6,15 @@
   "type": "module",
   "scripts": {
     "build": "swc src -d dist --copy-files",
-    "start": "node dist/server.js",
-    "dev": "concurrently \"swc src -d dist --copy-files --watch\" \"nodemon --delay 500ms dist/server.js\"",
+    "start": "NODE_ENV=production node dist/server.js",
+    "dev": "NODE_ENV=development concurrently \"swc src -d dist --copy-files --watch\" \"nodemon --delay 500ms dist/server.js\"",
     "clean": "rm -rf dist",
-    "prebuild": "npm run clean"
+    "prebuild": "npm run clean",
+    "env:check": "node -e \"require('dotenv').config({path: '../.env.dev'}); console.log('Environment loaded:', {NODE_ENV: process.env.NODE_ENV, PORT: process.env.PORT, REDIS_HOST: process.env.REDIS_HOST})\""
   },
   "dependencies": {
     "cors": "^2.8.5",
+    "dotenv": "^16.3.1",
     "express": "^4.18.2",
     "express-rate-limit": "^7.1.5",
     "helmet": "^7.1.0"
