@@ -42,10 +42,10 @@ const AWS_REGION = process.env.AWS_REGION || 'us-east-1';
 
 // Configure AWS SDK with conditional production/local settings
 const isLocal =
-  process.env.NODE_ENV === 'development' ||
+  process.env.DB_ENV === 'local' ||
   !process.env.AWS_ACCESS_KEY_ID ||
   !process.env.AWS_SECRET_ACCESS_KEY;
-
+console.log({ isLocal })
 const awsConfig = isLocal
   ? localConfig
   : {
@@ -55,6 +55,14 @@ const awsConfig = isLocal
   };
 
 AWS.config.update(awsConfig);
+
+// Log the database configuration being used
+console.log(`🔧 DynamoDB Configuration: ${isLocal ? 'LOCAL' : 'AWS'} (DB_ENV: ${process.env.DB_ENV || 'not set'})`);
+if (isLocal) {
+  console.log(`🔧 DynamoDB Local endpoint: ${awsConfig.endpoint}`);
+} else {
+  console.log(`🔧 DynamoDB AWS region: ${awsConfig.region}`);
+}
 
 // Create DynamoDB clients
 const dynamoDb = new AWS.DynamoDB.DocumentClient();

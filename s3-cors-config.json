@@ -1,0 +1,26 @@
+{
+  "CORSRules": [
+    {
+      "AllowedOrigins": [
+        "http://localhost:3000",
+        "http://localhost:3001",
+        "https://your-production-domain.com"
+      ],
+      "AllowedMethods": [
+        "GET",
+        "HEAD"
+      ],
+      "AllowedHeaders": [
+        "Content-Type",
+        "Content-MD5",
+        "Authorization",
+        "x-amz-date",
+        "x-amz-content-sha256"
+      ],
+      "ExposeHeaders": [
+        "ETag"
+      ],
+      "MaxAgeSeconds": 3600
+    }
+  ]
+}

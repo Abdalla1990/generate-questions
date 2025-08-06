@@ -145,10 +145,20 @@ COMPLETION REQUIREMENTS:
 • EVERY question MUST have ALL its required fields
 • For multiple-choice: MUST have 4 complete choices and a valid correct-answer-index
 • For image/voice: MUST have complete URLs and correct-answer
-• For range: MUST have all numeric fields (min, max, correct, range)
+• For range: MUST have all numeric fields (min-value, max-value, correct-answer, range) with PRECISE CALCULATIONS
 • NEVER leave arrays with empty strings ["value", "", ""]
 • NEVER include empty objects or partial data
 • If you cannot complete a question fully, do not include it
+
+RANGE QUESTION CALCULATION REQUIREMENTS:
+• For range questions, the UI uses min-value and max-value to determine correctness
+• The 'range' field MUST be calculated as the maximum acceptable deviation from correct-answer
+• CALCULATION FORMULA: range = min(correct-answer - min-value, max-value - correct-answer)
+• EXAMPLES:
+  - If correct-answer=100, min-value=80, max-value=120 → range=20
+  - If correct-answer=50, min-value=45, max-value=60 → range=5 (because 50-45=5 is smaller than 60-50=10)
+  - If correct-answer=828, min-value=800, max-value=850 → range=22 (because 828-800=28 is larger than 850-828=22)
+• The range field represents the maximum deviation the UI will accept as correct
 
 CALENDAR REQUIREMENTS FOR HISTORY QUESTIONS:
 • For Islamic history questions:
@@ -407,15 +417,15 @@ async function generateQuestionsWithOpenAI(NUM_Q) {
                     },
                     'min-value': {
                       type: 'number',
-                      description: 'For range questions, the minimum acceptable value'
+                      description: 'For range questions, the minimum acceptable value for UI validation'
                     },
                     'max-value': {
                       type: 'number',
-                      description: 'For range questions, the maximum acceptable value'
+                      description: 'For range questions, the maximum acceptable value for UI validation'
                     },
                     'range': {
                       type: 'number',
-                      description: 'For range questions, number, must be declared as the acceptable range around the correct value considering min-value and max-value'
+                      description: 'For range questions, the maximum acceptable deviation from correct-answer. MUST be calculated as: min(correct-answer - min-value, max-value - correct-answer)'
                     },
                     'correct-answer': {
                       type: 'number',

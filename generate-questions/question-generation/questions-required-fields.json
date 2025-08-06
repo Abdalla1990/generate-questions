@@ -70,9 +70,9 @@
       "unit"
     ],
     "validation": {
-      "range": "number, must be declared as the acceptable range around the correct value considering min-value and max-value",
-      "min-value": "number, the lower bound of the acceptable range",
-      "max-value": "number, must be greater than min-value",
+      "range": "number, maximum acceptable deviation from correct-answer. Calculate as: min(correct-answer - min-value, max-value - correct-answer)",
+      "min-value": "number, the lower bound displayed in UI for user input validation",
+      "max-value": "number, the upper bound displayed in UI for user input validation (must be greater than min-value)",
       "correct-answer": "number, the exact correct answer (must be between min-value and max-value)",
       "unit": "string, optional unit for display (e.g., 'years', 'dollars', 'meters')"
     }

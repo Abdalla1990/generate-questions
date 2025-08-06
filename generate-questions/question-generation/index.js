@@ -289,7 +289,7 @@ module.exports = {
   reportCosts,
   getElapsedTime,
   formatExecutionTime
-};
+};                                                                                                                                                                                                                                                                                                                                                                                                                                                                                          
 
 // Main execution when run directly
 async function main() {

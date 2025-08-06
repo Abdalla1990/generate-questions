@@ -13,6 +13,7 @@
     "env:check": "node -e \"require('dotenv').config({path: '../.env.dev'}); console.log('Environment loaded:', {NODE_ENV: process.env.NODE_ENV, PORT: process.env.PORT, REDIS_HOST: process.env.REDIS_HOST})\""
   },
   "dependencies": {
+    "aws-sdk": "^2.1692.0",
     "cors": "^2.8.5",
     "dotenv": "^16.3.1",
     "express": "^4.18.2",
