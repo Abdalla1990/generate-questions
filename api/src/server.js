@@ -7,6 +7,12 @@ import path from 'path';
 import { fileURLToPath } from 'url';
 import { dirname } from 'path';
 import dotenv from 'dotenv';
+// Import our wrapped CommonJS modules
+import { generateQuestionSets } from '../wrappers/generate-questions-sets-wrapper.js';
+import { generateGPTQuestions } from '../wrappers/generate-questions-wrapper.js';
+import SetsAllocator from '../wrappers/sets-allocator-wrapper.js';
+import QuestionsMerger from '../wrappers/questions-merger-wrapper.js';
+import S3Service from '../wrappers/s3-service-wrapper.js';
 
 // Load environment variables from root directory
 const __filename = fileURLToPath(import.meta.url);
@@ -20,11 +26,7 @@ const envPath = path.join(rootDir, envFile);
 console.log(`🔧 Loading environment from: ${envPath}`);
 dotenv.config({ path: envPath });
 
-// Import our wrapped CommonJS modules
-import { generateQuestionSets } from '../wrappers/generate-questions-sets-wrapper.js';
-import { generateGPTQuestions } from '../wrappers/generate-questions-wrapper.js';
-import SetsAllocator from '../wrappers/sets-allocator-wrapper.js';
-import QuestionsMerger from '../wrappers/questions-merger-wrapper.js';
+
 
 const app = express();
 const PORT = process.env.PORT || 3000;
@@ -212,7 +214,7 @@ app.post('/api/sets/allocate', asyncHandler(async (req, res) => {
 
 // 4. Merge Questions Endpoint
 app.post('/api/questions/merge', asyncHandler(async (req, res) => {
-  const { userId, categoryIds } = req.body;
+  const { userId, categoryIds, roundId } = req.body;
 
   if (!userId || !categoryIds || !Array.isArray(categoryIds) || categoryIds.length === 0) {
     return res.status(400).json({
@@ -221,9 +223,16 @@ app.post('/api/questions/merge', asyncHandler(async (req, res) => {
     });
   }
 
+  if (!roundId) {
+    return res.status(400).json({
+      error: 'Invalid request',
+      message: 'roundId is required'
+    });
+  }
+
   let merger;
   try {
-    console.log(`🚀 API: Merging questions for user ${userId} across ${categoryIds.length} categories`);
+    console.log(`🚀 API: Merging questions for user ${userId} across ${categoryIds.length} categories for round ${roundId}`);
 
     // Initialize the merger
     merger = new QuestionsMerger();
@@ -257,15 +266,27 @@ app.post('/api/questions/merge', asyncHandler(async (req, res) => {
       }
     }
 
+    // Save questions to S3
+
+    const s3Service = new S3Service();
+    const s3Result = await s3Service.saveQuestions(questions, userId, roundId);
+    console.log(`✅ Questions saved to S3 for user ${userId}, round ${roundId}`);
+
+    // Continue with response even if S3 upload fails
+
+
     res.json({
       success: true,
       message: `Merged questions for user ${userId}`,
       data: {
         userId,
+        roundId,
         categoryIds,
         totalQuestions: questions.length,
         categoryResults: results,
-        allQuestions: questions
+        allQuestions: questions,
+        s3Location: s3Result.location,
+        publicUrl: s3Result.publicUrl
       },
       timestamp: new Date().toISOString()
     });
